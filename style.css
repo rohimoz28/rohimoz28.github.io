@@ -6,6 +6,10 @@ header {
 
 }
 
+li {
+    list-style-type: none;
+}
+
 .text {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 50px;
