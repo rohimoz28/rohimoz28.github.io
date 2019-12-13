@@ -46,6 +46,32 @@ li {
     margin-top: 25px;
 }
 
+.btn-xl:active {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background-color: #ff4473;
+    border-color: #ff4473;
+    /* border: 2px solid #fff; */
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 30px;
+    padding: 10px 30px;
+    margin-top: 25px;
+}
+
+.btn-xl:visited {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background-color: #ff4473;
+    border-color: #ff4473;
+    /* border: 2px solid #fff; */
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 30px;
+    padding: 10px 30px;
+    margin-top: 25px;
+}
+
 .portfolio-caption {
     background-color: white;
     padding-top: 5px;
