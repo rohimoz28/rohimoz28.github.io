@@ -6,14 +6,14 @@ publishDir = "docs"
 
 [cover]
 
+[params.assets]
+  disableFingerprinting = true
+
 [params]
     ShowBreadCrumbs = true
     ShowReadingTime = true
     ShowShareButtons = true
     ShowPostNavLinks = true
-
-[params.assets]
-  disableFingerprinting = true
 
 [menus]
   [[menus.main]]

@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://rohimoz28.github.io/posts/</loc>
     <lastmod>2024-09-29T19:03:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://rohimoz28.github.io/</loc>
     <lastmod>2024-09-29T19:03:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://rohimoz28.github.io/categories/</loc>
     <lastmod>2024-09-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>https://rohimoz28.github.io/tags/docker/</loc>
     <lastmod>2024-09-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/tutorial-install-odoo-17-menggunakan-docker/</loc>
+    <loc>https://rohimoz28.github.io/posts/tutorial-install-odoo-17-menggunakan-docker/</loc>
     <lastmod>2024-09-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/odoo/</loc>
+    <loc>https://rohimoz28.github.io/tags/odoo/</loc>
     <lastmod>2024-09-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://rohimoz28.github.io/tags/</loc>
     <lastmod>2024-09-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/web-developer/</loc>
+    <loc>https://rohimoz28.github.io/categories/web-developer/</loc>
     <lastmod>2024-09-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/css/</loc>
+    <loc>https://rohimoz28.github.io/categories/css/</loc>
     <lastmod>2024-08-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dev/</loc>
+    <loc>https://rohimoz28.github.io/tags/dev/</loc>
     <lastmod>2024-08-29T18:41:16+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/second/</loc>
+    <loc>https://rohimoz28.github.io/posts/second/</loc>
     <lastmod>2024-08-29T18:41:16+07:00</lastmod>
   </url>
 </urlset>
