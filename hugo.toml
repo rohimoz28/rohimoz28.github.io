@@ -11,7 +11,7 @@ publishDir = "docs"
     ShowReadingTime = true
     ShowShareButtons = true
     ShowPostNavLinks = true
-    params.assets.disableFingerprinting = true
+    site.Params.assets.disableFingerprinting = true
 
 [menus]
   [[menus.main]]
