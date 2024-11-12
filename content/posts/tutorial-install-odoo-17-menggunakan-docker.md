@@ -2,7 +2,7 @@
 title = 'Install Odoo 17 Menggunakan Docker'
 date = 2024-09-29T18:41:16+07:00
 draft = false
-categories = ['web developer']
+categories = ['Web Dev']
 tags = ['odoo', 'docker']
 +++
 

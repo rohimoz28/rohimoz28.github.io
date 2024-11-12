@@ -6,10 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Relokasi Docker | Rohimoz28</title>
-<meta name="keywords" content="dev">
-<meta name="description" content="Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.
-Solusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.
-Persiapan backup sudo mv /var/lib/docker /var/lib/docker.">
+<meta name="keywords" content="docker">
+<meta name="description" content="Latar Belakang Masalah
+Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.
+Solusi
+Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.
+Persiapan
+
+
+stop semua docker yang sedang berjalan">
 <meta name="author" content="">
 <link rel="canonical" href="https://rohimoz28.github.io/posts/relokasi-docker/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -20,6 +25,7 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker.">
 <link rel="mask-icon" href="https://rohimoz28.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://rohimoz28.github.io/posts/relokasi-docker/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,9 +63,14 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker.">
 
     </style>
 </noscript><meta property="og:title" content="Relokasi Docker" />
-<meta property="og:description" content="Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.
-Solusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.
-Persiapan backup sudo mv /var/lib/docker /var/lib/docker." />
+<meta property="og:description" content="Latar Belakang Masalah
+Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.
+Solusi
+Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.
+Persiapan
+
+
+stop semua docker yang sedang berjalan" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rohimoz28.github.io/posts/relokasi-docker/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-08-29T18:41:16+07:00" />
@@ -67,9 +78,14 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker." />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Relokasi Docker"/>
-<meta name="twitter:description" content="Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.
-Solusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.
-Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
+<meta name="twitter:description" content="Latar Belakang Masalah
+Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.
+Solusi
+Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.
+Persiapan
+
+
+stop semua docker yang sedang berjalan"/>
 
 
 <script type="application/ld+json">
@@ -98,12 +114,12 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
   "@type": "BlogPosting",
   "headline": "Relokasi Docker",
   "name": "Relokasi Docker",
-  "description": "Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.\nSolusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.\nPersiapan backup sudo mv /var/lib/docker /var/lib/docker.",
+  "description": "Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.\nSolusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.\nPersiapan stop semua docker yang sedang berjalan\n",
   "keywords": [
-    "dev"
+    "docker"
   ],
-  "articleBody": "Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.\nSolusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.\nPersiapan backup sudo mv /var/lib/docker /var/lib/docker.bak\nstop docker service sudo systemctl stop docker.service sudo systemctl stop docker.socker\ncek status docker service sudo systemctl status docker.service\npindahkan direktori docker ke tempat baru sudo rsync -avxP /var/lib/docker/ /new/path/to/docker/\nSetelah berhasil ter-copy. Kita lanjutkan untuk merelokasi docker dengan cara membuat symbolic link.\nMembuat Symbolic Link Sebenarnya, ada beberapa cara untuk merelokasi docker. Tapi, di bawah ini adalah cara yang paling mudah. Dikarenakan kita tidak perlu mengubah file konfigurasi docker.\nmembuat symbolic link sudo ln -s /new/path/to/docker/ /var/lib/docker\nstart docker service sudo systemctl start docker\ncek status docker service untuk memastikan service berjalan tanpa masalah sudo systemctl status docker\nhapus direktori docker yang lama, jika service docker sudah berhasil berjalan rm -r /var/lib/docker.bak\nPenutup Demikian cara merelokasi /var/lib/docker di sistem operasi linux. Cara ini sangat penting jika kita ingin menjaga partisi root kita tetap memiliki kapasitas storage yang cukup untuk aplikasi linux lainnya.\n",
-  "wordCount" : "218",
+  "articleBody": "Latar Belakang Masalah Secara default, direktori docker terletak pada /var/lib/docker. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage root kita yang pada akhirnya akan menghentikan service docker itu sendiri.\nSolusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi root.\nPersiapan stop semua docker yang sedang berjalan\ndocker stop $(docker ps -aq)\nstop docker service\nsudo systemctl stop docker.service sudo systemctl stop docker.socket\ncek status docker service untuk memastikan servis telah berhenti\nsudo systemctl status docker.service\nbackup (copy) docker direktori\nsudo cp -r /var/lib/docker /var/lib/docker.bak\npindahkan direktori docker ke tempat baru\nsudo rsync -avxP /var/lib/docker/ /new/path/to/docker/\nSetelah berhasil ter-copy. Kita lanjutkan untuk merelokasi docker dengan cara membuat symbolic link.\nRelokasi /var/lib/docker Sebenarnya, ada beberapa cara untuk merelokasi docker. Tapi, di bawah ini adalah cara yang paling mudah. Dikarenakan kita tidak perlu mengubah file konfigurasi docker.\nmembuat symbolic link\nsudo ln -s /new/path/to/docker/ /var/lib/docker\nstart docker service\nsudo systemctl start docker\ncek status docker service untuk memastikan service berjalan tanpa masalah\nsudo systemctl status docker\nhapus direktori docker yang lama, jika service docker sudah berhasil berjalan\nrm -r /var/lib/docker.bak\nPenutup Demikian cara merelokasi /var/lib/docker di sistem operasi linux. Cara ini sangat penting jika kita ingin menjaga partisi root kita tetap memiliki kapasitas storage yang cukup untuk aplikasi linux lainnya.\n",
+  "wordCount" : "237",
   "inLanguage": "en",
   "datePublished": "2024-08-29T18:41:16+07:00",
   "dateModified": "2024-08-29T18:41:16+07:00",
@@ -164,7 +180,7 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://rohimoz28.github.io/" title="Rohimoz28">
+                <a href="https://rohimoz28.github.io/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
@@ -189,7 +205,7 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
     <h1 class="post-title entry-hint-parent">
       Relokasi Docker
     </h1>
-    <div class="post-meta"><span title='2024-08-29 18:41:16 +0700 WIB'>August 29, 2024</span>&nbsp;·&nbsp;2 min
+    <div class="post-meta"><span title='2024-08-29 18:41:16 +0700 +07'>August 29, 2024</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> 
@@ -199,41 +215,49 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
 <p>Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi <code>root</code>.</p>
 <h3 id="persiapan">Persiapan<a hidden class="anchor" aria-hidden="true" href="#persiapan">#</a></h3>
 <ol>
-<li>backup</li>
-</ol>
-<p><code>sudo mv /var/lib/docker /var/lib/docker.bak</code></p>
-<ol start="2">
-<li>stop docker service</li>
-</ol>
+<li>
+<p>stop semua docker yang sedang berjalan</p>
+<p><code>docker stop $(docker ps -aq)</code></p>
+</li>
+<li>
+<p>stop docker service</p>
 <p><code>sudo systemctl stop docker.service</code> <br>
-<code>sudo systemctl stop docker.socker</code></p>
-<ol start="3">
-<li>cek status docker service</li>
-</ol>
+<code>sudo systemctl stop docker.socket</code></p>
+</li>
+<li>
+<p>cek status docker service untuk memastikan servis telah berhenti</p>
 <p><code>sudo systemctl status docker.service</code></p>
-<ol start="4">
-<li>pindahkan direktori docker ke tempat baru</li>
-</ol>
+</li>
+<li>
+<p>backup (copy) docker direktori</p>
+<p><code>sudo cp -r /var/lib/docker /var/lib/docker.bak</code></p>
+</li>
+<li>
+<p>pindahkan direktori docker ke tempat baru</p>
 <p><code>sudo rsync -avxP /var/lib/docker/ /new/path/to/docker/</code></p>
+</li>
+</ol>
 <p>Setelah berhasil ter-copy. Kita lanjutkan untuk merelokasi docker dengan cara membuat symbolic link.</p>
-<h3 id="membuat-symbolic-link">Membuat Symbolic Link<a hidden class="anchor" aria-hidden="true" href="#membuat-symbolic-link">#</a></h3>
+<h3 id="relokasi-varlibdocker">Relokasi /var/lib/docker<a hidden class="anchor" aria-hidden="true" href="#relokasi-varlibdocker">#</a></h3>
 <p>Sebenarnya, ada beberapa cara untuk merelokasi docker. Tapi, di bawah ini adalah cara yang paling mudah. Dikarenakan kita tidak perlu mengubah file konfigurasi docker.</p>
 <ol>
-<li>membuat symbolic link</li>
-</ol>
+<li>
+<p>membuat symbolic link</p>
 <p><code>sudo ln -s /new/path/to/docker/ /var/lib/docker</code></p>
-<ol start="2">
-<li>start docker service</li>
-</ol>
+</li>
+<li>
+<p>start docker service</p>
 <p><code>sudo systemctl start docker</code></p>
-<ol start="3">
-<li>cek status docker service untuk memastikan service berjalan tanpa masalah</li>
-</ol>
+</li>
+<li>
+<p>cek status docker service untuk memastikan service berjalan tanpa masalah</p>
 <p><code>sudo systemctl status docker</code></p>
-<ol start="4">
-<li>hapus direktori docker yang lama, jika service docker sudah berhasil berjalan</li>
-</ol>
+</li>
+<li>
+<p>hapus direktori docker yang lama, jika service docker sudah berhasil berjalan</p>
 <p><code>rm -r /var/lib/docker.bak</code></p>
+</li>
+</ol>
 <h3 id="penutup">Penutup<a hidden class="anchor" aria-hidden="true" href="#penutup">#</a></h3>
 <p>Demikian cara merelokasi <code>/var/lib/docker</code> di sistem operasi linux. Cara ini sangat penting jika kita ingin menjaga partisi <code>root</code> kita tetap memiliki kapasitas storage yang cukup untuk aplikasi linux lainnya.</p>
 
@@ -242,7 +266,7 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://rohimoz28.github.io/tags/dev/">dev</a></li>
+      <li><a href="https://rohimoz28.github.io/tags/docker/">Docker</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://rohimoz28.github.io/posts/tutorial-install-odoo-17-menggunakan-docker/">
@@ -256,7 +280,7 @@ Persiapan backup sudo mv /var/lib/docker /var/lib/docker."/>
 <ul class="share-buttons">
     <li>
         <a target="_blank" rel="noopener noreferrer" aria-label="share Relokasi Docker on x"
-            href="https://x.com/intent/tweet/?text=Relokasi%20Docker&amp;url=https%3a%2f%2frohimoz28.github.io%2fposts%2frelokasi-docker%2f&amp;hashtags=dev">
+            href="https://x.com/intent/tweet/?text=Relokasi%20Docker&amp;url=https%3a%2f%2frohimoz28.github.io%2fposts%2frelokasi-docker%2f&amp;hashtags=docker">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />

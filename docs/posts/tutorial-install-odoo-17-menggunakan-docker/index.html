@@ -7,9 +7,19 @@
 <meta name="robots" content="index, follow">
 <title>Install Odoo 17 Menggunakan Docker | Rohimoz28</title>
 <meta name="keywords" content="odoo, docker">
-<meta name="description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+<meta name="description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
 Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.
-Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori Silahkan buat Direktori dengan struktur seperti diatas.">
+
+Buat Struktur Direktori
+Build Dockerfile untuk Odoo
+Buat Docker Compose
+Docker Compose Extension
+
+Struktur Direktori
+
+">
 <meta name="author" content="">
 <link rel="canonical" href="https://rohimoz28.github.io/posts/tutorial-install-odoo-17-menggunakan-docker/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -20,6 +30,7 @@ Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker C
 <link rel="mask-icon" href="https://rohimoz28.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://rohimoz28.github.io/posts/tutorial-install-odoo-17-menggunakan-docker/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,9 +68,19 @@ Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker C
 
     </style>
 </noscript><meta property="og:title" content="Install Odoo 17 Menggunakan Docker" />
-<meta property="og:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+<meta property="og:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
 Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.
-Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori Silahkan buat Direktori dengan struktur seperti diatas." />
+
+Buat Struktur Direktori
+Build Dockerfile untuk Odoo
+Buat Docker Compose
+Docker Compose Extension
+
+Struktur Direktori
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rohimoz28.github.io/posts/tutorial-install-odoo-17-menggunakan-docker/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-09-29T18:41:16+07:00" />
@@ -67,9 +88,19 @@ Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker C
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Install Odoo 17 Menggunakan Docker"/>
-<meta name="twitter:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+<meta name="twitter:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
 Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.
-Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori Silahkan buat Direktori dengan struktur seperti diatas."/>
+
+Buat Struktur Direktori
+Build Dockerfile untuk Odoo
+Buat Docker Compose
+Docker Compose Extension
+
+Struktur Direktori
+
+"/>
 
 
 <script type="application/ld+json">
@@ -98,7 +129,7 @@ Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker C
   "@type": "BlogPosting",
   "headline": "Install Odoo 17 Menggunakan Docker",
   "name": "Install Odoo 17 Menggunakan Docker",
-  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nJika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.\nBuat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori Silahkan buat Direktori dengan struktur seperti diatas.",
+  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nJika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.\nBuat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori ",
   "keywords": [
     "odoo", "docker"
   ],
@@ -164,7 +195,7 @@ Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker C
         </div>
         <ul id="menu">
             <li>
-                <a href="https://rohimoz28.github.io/" title="Rohimoz28">
+                <a href="https://rohimoz28.github.io/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
@@ -189,7 +220,7 @@ Buat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker C
     <h1 class="post-title entry-hint-parent">
       Install Odoo 17 Menggunakan Docker
     </h1>
-    <div class="post-meta"><span title='2024-09-29 18:41:16 +0700 WIB'>September 29, 2024</span>&nbsp;·&nbsp;3 min
+    <div class="post-meta"><span title='2024-09-29 18:41:16 +0700 +07'>September 29, 2024</span>&nbsp;·&nbsp;3 min
 
 </div>
   </header> 
@@ -301,8 +332,8 @@ meng-copy direktory <code>odoo-demo</code> dan merubah konfigurasinya sesuai den
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://rohimoz28.github.io/tags/odoo/">odoo</a></li>
-      <li><a href="https://rohimoz28.github.io/tags/docker/">docker</a></li>
+      <li><a href="https://rohimoz28.github.io/tags/odoo/">Odoo</a></li>
+      <li><a href="https://rohimoz28.github.io/tags/docker/">Docker</a></li>
     </ul>
 <nav class="paginav">
   <a class="next" href="https://rohimoz28.github.io/posts/relokasi-docker/">
