@@ -27,5 +27,21 @@ Jika belum, silahkan ikuti &lt;a href=&#34;%5Bhttps://%5D(https://docs.docker.co
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://rohimoz28.github.io/images/01/struktur-direktori.jpg&#34; alt=&#34;struktur-direktori&#34;  /&gt;
 &lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Override ir.model.access.csv</title>
+      <link>https://rohimoz28.github.io/posts/third/</link>
+      <pubDate>Mon, 29 Jul 2024 18:41:16 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/posts/third/</guid>
+      <description>&lt;h3 id=&#34;latar-belakang-masalah&#34;&gt;Latar Belakang Masalah&lt;/h3&gt;
+&lt;p&gt;Biasanya, ketika kita meng-install module odoo dari third party, sudah otomatis ada pengaturan &lt;code&gt;ir.model.access.csv&lt;/code&gt; bawaan modul tersebut. Ada kalanya,
+kita ingin menyesuaikan hak akses tersebut dengan kebutuhan di modul kustomisasi kita.&lt;/p&gt;
+&lt;h3 id=&#34;solusi&#34;&gt;Solusi&lt;/h3&gt;
+&lt;p&gt;Maka dari itu, kita perlu melakukan override hak akses yg ada di &lt;code&gt;ir.model.access.csv&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;override-irmodelaccesscsv&#34;&gt;Override ir.model.access.csv&lt;/h3&gt;
+&lt;p&gt;Dibawah ini adalah contoh hak akses di &lt;code&gt;ir.model.access.csv&lt;/code&gt; yang ingin kita override.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-csv&#34; data-lang=&#34;csv&#34;&gt;id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_holidays_status_manager,hr.holidays.status manager,model_hr_leave_type,hr_holidays.group_hr_holidays_manager,1,1,1,1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Untuk meng-override nya, silahkan buka file &lt;code&gt;ir.model.access.csv&lt;/code&gt; di modul kustomisasi kalian dan ubah menjadi kira-kira seperti ini,&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

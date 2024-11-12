@@ -6,22 +6,14 @@
     <description>Recent content in Dev on Rohimoz28</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Aug 2024 18:41:16 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2024 19:03:00 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Relokasi Docker</title>
-      <link>http://localhost:1313/posts/relokasi-docker/</link>
-      <pubDate>Thu, 29 Aug 2024 18:41:16 +0700</pubDate>
-      <guid>http://localhost:1313/posts/relokasi-docker/</guid>
-      <description>&lt;h3 id=&#34;latar-belakang-masalah&#34;&gt;Latar Belakang Masalah&lt;/h3&gt;
-&lt;p&gt;Secara default, direktori docker terletak pada &lt;code&gt;/var/lib/docker&lt;/code&gt;. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage &lt;code&gt;root&lt;/code&gt; kita yang pada akhirnya akan menghentikan service docker itu sendiri.&lt;/p&gt;
-&lt;h3 id=&#34;solusi&#34;&gt;Solusi&lt;/h3&gt;
-&lt;p&gt;Maka dari itu, kita perlu merelokasi direktori default docker ini ke partisi lain yang memiliki kapasitas lebih besar daripada partisi &lt;code&gt;root&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;persiapan&#34;&gt;Persiapan&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;stop semua docker yang sedang berjalan
-&lt;code&gt;docker stop $(docker ps -aq)&lt;/code&gt;&lt;/p&gt;</description>
+      <title>Fourth</title>
+      <link>http://localhost:1313/posts/fourth/</link>
+      <pubDate>Sun, 29 Sep 2024 19:03:00 +0700</pubDate>
+      <guid>http://localhost:1313/posts/fourth/</guid>
+      <description>&lt;p&gt;This is my fourth post!!!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
