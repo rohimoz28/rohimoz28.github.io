@@ -8,16 +8,12 @@
 <title>Install Odoo 17 Menggunakan Docker | Rohimoz28</title>
 <meta name="keywords" content="odoo, docker">
 <meta name="description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
-Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
 Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
-Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.
-
-Buat Struktur Direktori
-Build Dockerfile untuk Odoo
-Buat Docker Compose
-Docker Compose Extension
-
-Struktur Direktori
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
 
 ">
 <meta name="author" content="">
@@ -69,16 +65,12 @@ Struktur Direktori
     </style>
 </noscript><meta property="og:title" content="Install Odoo 17 Menggunakan Docker" />
 <meta property="og:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
-Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
 Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
-Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.
-
-Buat Struktur Direktori
-Build Dockerfile untuk Odoo
-Buat Docker Compose
-Docker Compose Extension
-
-Struktur Direktori
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
 
 " />
 <meta property="og:type" content="article" />
@@ -89,16 +81,12 @@ Struktur Direktori
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Install Odoo 17 Menggunakan Docker"/>
 <meta name="twitter:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
-Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
 Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
-Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.
-
-Buat Struktur Direktori
-Build Dockerfile untuk Odoo
-Buat Docker Compose
-Docker Compose Extension
-
-Struktur Direktori
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
 
 "/>
 
@@ -129,12 +117,12 @@ Struktur Direktori
   "@type": "BlogPosting",
   "headline": "Install Odoo 17 Menggunakan Docker",
   "name": "Install Odoo 17 Menggunakan Docker",
-  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nJika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.\nBuat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori ",
+  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nUntuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.\nMasuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize. Struktur folder kalian akan tampak seperti ini: ",
   "keywords": [
     "odoo", "docker"
   ],
-  "articleBody": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nJika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.\nBuat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Struktur Direktori Silahkan buat Direktori dengan struktur seperti diatas.\nDockerfile Selanjutnya kita akan membuat Dockerfile untuk Odoo 17. Silahkan sesuaikan dependensi yang akan di install.\nFROM odoo:17.0 USER root RUN apt-get -y update \u0026\u0026 apt-get install -y git xmlsec1 vim zip RUN pip3 install --upgrade --no-cache-dir pip RUN pip3 install --no-cache-dir astor RUN pip3 install --no-cache-dir cachetools RUN pip3 install --no-cache-dir openupgradelib RUN pip3 install --no-cache-dir wheel RUN pip3 install --no-cache-dir pandas RUN pip3 install --no-cache-dir mdb-parser RUN pip3 install --no-cache-dir holidays RUN pip3 install --no-cache-dir bigjson RUN pip3 install --no-cache-dir pymysql RUN pip3 install --no-cache-dir formats RUN pip3 install --no-cache-dir py3o.formats RUN pip3 install --no-cache-dir py3o.template # Password security RUN pip3 install --no-cache-dir zxcvbn Untuk build image dari dockerfile, gunakan command berikut: docker build -t custom-odoo:17.0 .\nDocker Compose Silahkan buat file docker-compose.yaml dengan kode dibawah ini:\nversion: \"3.8\" services: odoo-demo: image: custom-odoo:17.0 container_name: odoo-demo # env_file: myenvfile.env depends_on: - postgres-demo volumes: - odoo1-data-demo:/var/lib/odoo - ./config/odoo:/etc/odoo - ../../customize/extra-addons:/mnt/extra-addons networks: - demo_odoo_network postgres-demo: image: postgres:15 container_name: postgres-demo env_file: myenvfile.env volumes: - ./pg-data:/var/lib/pgsql/data/pgdata networks: - demo_odoo_network volumes: odoo1-data-demo: name: \"odoo1-data-demo\" networks: demo_odoo_network: name: demo_odoo_network driver: bridge Docker Compose Extension Biasanya, kita menjalankan docker di lokal dan juga server namun dengan konfigurasi yg berbeda pada file docker-compose.yaml. Dengan alasan kemudahan untuk konfigurasi, disini penulis membuat ekstensi untuk file konfigurasi docker-compose.yaml dengan nama dev.yaml dan prod.yaml. File dev.yaml digunakan untuk di lokal dan file prod.yaml digunakan untuk server. Isi dari kedua file tersebut mirip, tinggal disesuaikan saja dengan kebutuhan di lokal dan server. Dibawah ini penulis menggunakan file dev.yaml sebagai contoh. Silahkan menyesuaikan prod.yaml untuk kebutuhan server kalian.\nversion: \"3.8\" services: odoo-demo: restart: unless-stopped ports: - \"8069:8069\" postgres-demo: ports: - \"5433:5432\" restart: unless-stopped Jika sudah membuat docker-compose.yaml dan dev.yaml, silahkan jalankan command docker berikut: docker compose -f docker-compose.yaml -f dev.yaml up -d\nUntuk cek apakah service docker sudah berjalan, silahkan gunakan command : docker ps. Untuk cek log dari aplikasi yang sedang berjalan, bisa menggunakan command: docker compose logs -f. Atau, bisa juga melihat log berdasarkan container yang sedang berjalan menggunakan command: docker container logs -f ID_Container.\nSekarang saatnya untuk menjalankan service docker di browser. Jika tidak ada masalah, seharusnya kita bisa mengakses aplikasi odoo pada alamat http://localhost:8069/. Epilog Selamat, sekarang kalian sudah bisa meng-install Odoo dan Postgresql menggunakan docker. Dengan konfigurasi ini, teman-teman bisa meng-install multi-instance odoo dengan cara meng-copy direktory odoo-demo dan merubah konfigurasinya sesuai dengan kebutuhan teman-teman.\nTerimakasih.\n",
-  "wordCount" : "467",
+  "articleBody": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nUntuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.\nMasuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize. Struktur folder kalian akan tampak seperti ini: 1. Folder Conf Folder ini berisikan file - file konfigurasi dari :\nDocker (docker-compose.yaml, Dockerfile, dev.yaml, prod.yaml) Database (pg-data) File Konfigurasi Project (odoo-demo) Secret File Konfigurasi (myenvfile.env) 2. Folder Customize Folder ini berisikan modul kustomisasi odoo. Biasanya, saya membedakan antara modul kustomisasi yang di install dari thirdparty dengan modul murni hasil kustomisasi kita sendiri.\naddons-thirdparty berisikan modul yang berasal dari thirdparty (OCA, Cybrosys, dll) addons-customize berisikan modul kustomisasi kita sendiri. Selanjutnya, saya akan membahas Folder Conf lebih detail.\nJika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.\nBuat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Dockerfile File ini adalah yang akan kita build menjadi docker images yang nantinya digunakan oleh project Odoo kita. Yang perlu diperhatikan adalah:\nOdoo Version yang ingin digunakan Package linux yang ingin di install Package dependensi python yang ingin digunakan Pada repo di atas, saya menggunakan konfigurasi Dockerfile seperti dibawah ini:\nFROM odoo:17.0 USER root RUN apt-get -y update \u0026\u0026 apt-get install -y git xmlsec1 vim zip RUN pip3 install --upgrade --no-cache-dir pip RUN pip3 install --no-cache-dir astor RUN pip3 install --no-cache-dir cachetools RUN pip3 install --no-cache-dir openupgradelib RUN pip3 install --no-cache-dir wheel RUN pip3 install --no-cache-dir pandas RUN pip3 install --no-cache-dir mdb-parser RUN pip3 install --no-cache-dir holidays RUN pip3 install --no-cache-dir bigjson RUN pip3 install --no-cache-dir pymysql RUN pip3 install --no-cache-dir formats RUN pip3 install --no-cache-dir py3o.formats RUN pip3 install --no-cache-dir py3o.template # Password security RUN pip3 install --no-cache-dir zxcvbn Untuk build image dari dockerfile, gunakan command berikut: docker build -t custom-odoo:17.0 .\nDocker Compose Untuk konfigurasi docker-compose.yaml saya menggunakan seperti ini:\nversion: \"3.8\" services: odoo-demo: image: custom-odoo:17.0 container_name: odoo-demo env_file: myenvfile.env depends_on: - postgres-demo volumes: - odoo1-data-demo:/var/lib/odoo - ./config/odoo/demo:/etc/odoo - ../../customize/odoo-demo/addons-customize:/mnt/addons-customize - ../../customize/odoo-demo/addons-thirdparty:/mnt/addons-thirdparty networks: - demo_odoo_network postgres-demo: image: postgres:15 container_name: postgres-demo env_file: myenvfile.env volumes: - ./pg-data:/var/lib/pgsql/data/pgdata - ./config/postgresql/postgresql.conf:/etc/postgresql/postgresql.conf:ro networks: - demo_odoo_network # nginx-default: # image: nginx:1.24.0 # container_name: nginx-default # volumes: # - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf # depends_on: # - odoo17-default # networks: # - default_odoo_network volumes: odoo1-data-demo: networks: demo_odoo_network: name: demo_odoo_network driver: bridge Docker Compose Extension Docker Compose Extension digunakan supaya docker-compose.yaml lebih efision dan memudahkan dalam hal maintenis. Biasanya, saya menggunakan dua ekstensi. dev.yaml dan prod.yaml.\nFile extension dev.yaml version: \"3.8\" services: odoo-demo: restart: unless-stopped ports: - \"8069:8069\" postgres-demo: ports: - \"5433:5432\" restart: unless-stopped # nginx-demo: # restart: no # ports: # - \"81:80\" File extension prod.yaml version: \"3.8\" services: odoo-demo: restart: unless-stopped ports: - \"8069:8069\" postgres-demo: ports: - \"5434:5432\" restart: unless-stopped # nginx-demo: # restart: always # ports: # - \"81:80\" Database Untuk database, saya menggunakan fitur docker bind mounts dimana ini memungkinkan untuk menyimpan file konfigurasi postgresql dan database nya disimpan di lokal folder, bukan di dalam volume.\nFolder pg-data berisikan file konfigurasi dan database dari postgresql.\nFile Environment Untuk environment konfigurasi, saya biasa memisahkan konfigurasi environment setiap aplikasi docker ke dalam sebuah file bernama myenvfile.env.\nSaya menyimpan user dan password postgresql ke dalam myenvfile.env seperti dibawah ini:\n# postgresql env variables\rPOSTGRES_DB=postgres\rPOSTGRES_USER=odoodemo\rPOSTGRES_PASSWORD=odoodemo123\rPGDATA=/var/lib/pgsql/data/pgdata\r# odoo env variables\r#HOST=postgres-demo\r#USER=odoodemo\r#PASSWORD=odoodemo123 Alasan saya memisahkannya dari docker-compose.yaml adalah untuk modularisasi dan juga kebutuhan setiap user akan environment aplikasi biasanya berbeda-beda. Hal ini akan membuat docker-compose.yaml menjadi lebih general dalam penggunaannya.\nFile Konfigurasi Project Biasanya juga, saya membuat sebuah folder yang berisikan file konfigurasi dari sebuah project secara khusus. Misalkan, saya membuat folder odoo-demo yang berisi file konfigurasi odoo secara spesifik hanya untuk project tertentu.\nDi dalam odoo-demo biasanya saya membuat folder:\nodoo : berisi file odoo.conf postgresql : berisi file postgresql.conf dan lainnya sesuai dengan kebutuh dari project tersebut Selanjutnya, kita akan coba menjalankan Odoo menggunakan Docker.\nMasuk ke dalam folder docker compose cd /conf/odoo-demo\nJalankan docker compose docker compose -f docker-compose.yaml -f dev.yaml up -d\nCek status docker compose Jika tidak ada masalah, jalan kan command di bawah ini untuk cek apakah servis Odoo dan Postgresql sudah berjalan. docker ps -l Cara Cek Log Biasanya kita akan memerlukan pengecekan log saat servis docker sedang berjalan. Untuk cek log dari semua servis yang berada di docker compose sebanyak 200 message log terakhir, jalankan command:\ndocker compose logs -f --tail 200\nUntuk cek log per container bisa menggunakan format dibawah ini:\ndocker container logs -f --tail 200 Sukses Sekarang saatnya untuk menjalankan service docker di browser. Jika tidak ada masalah, seharusnya kita bisa mengakses aplikasi odoo pada alamat http://localhost:8069/. Command Docker lainnya Restart docker compose docker compose -f docker-compose -f dev.yaml restart\nStop docker compose docker compose -f docker-compose -f dev.yaml stop\nStart docker compose docker compose -f docker-compose -f dev.yaml start\nRestart docker container docker container restart\nPenutup Selamat, sekarang kalian sudah bisa meng-install Odoo dan Postgresql menggunakan docker. Dengan konfigurasi dasar ini, selanjutnya kalian bisa install multi instance odoo yang kelak akan di bahas di artikel lainnya.\nTerimakasih.\n",
+  "wordCount" : "875",
   "inLanguage": "en",
   "datePublished": "2024-09-29T18:41:16+07:00",
   "dateModified": "2024-09-29T18:41:16+07:00",
@@ -220,26 +208,53 @@ Struktur Direktori
     <h1 class="post-title entry-hint-parent">
       Install Odoo 17 Menggunakan Docker
     </h1>
-    <div class="post-meta"><span title='2024-09-29 18:41:16 +0700 +07'>September 29, 2024</span>&nbsp;·&nbsp;3 min
+    <div class="post-meta"><span title='2024-09-29 18:41:16 +0700 +07'>September 29, 2024</span>&nbsp;·&nbsp;5 min
 
 </div>
   </header> 
   <div class="post-content"><p>Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
-Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di operating sistem kalian.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
 Jika belum, silahkan ikuti <a href="%5Bhttps://%5D(https://docs.docker.com/engine/install/)">Tutorial Install Docker</a> dari laman resminya.</p>
-<p>Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.</p>
+<p>Untuk tuorial kali ini, akan menggunakan source code dari <a href="https://github.com/rohimoz28/odoo-docker">repository</a>
+github saya. Silahkan di fork atau di clone di lokal kalian.</p>
+<p>Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. <code>conf</code> <code>customize</code>.
+Struktur folder kalian akan tampak seperti ini:
+<img loading="lazy" src="/public/images/01/struktur-direktori.jpg" alt="struktur-direktori"  />
+</p>
+<h2 id="1-folder-conf">1. Folder Conf<a hidden class="anchor" aria-hidden="true" href="#1-folder-conf">#</a></h2>
+<p>Folder ini berisikan file - file konfigurasi dari :</p>
+<ul>
+<li>Docker (<code>docker-compose.yaml</code>, <code>Dockerfile</code>, <code>dev.yaml</code>, <code>prod.yaml</code>)</li>
+<li>Database (<code>pg-data</code>)</li>
+<li>File Konfigurasi Project (<code>odoo-demo</code>)</li>
+<li>Secret File Konfigurasi (<code>myenvfile.env</code>)</li>
+</ul>
+<h2 id="2-folder-customize">2. Folder Customize<a hidden class="anchor" aria-hidden="true" href="#2-folder-customize">#</a></h2>
+<p>Folder ini berisikan modul kustomisasi odoo. Biasanya, saya membedakan antara modul kustomisasi yang di install dari
+thirdparty dengan modul murni hasil kustomisasi kita sendiri.</p>
+<ul>
+<li><code>addons-thirdparty</code> berisikan modul yang berasal dari thirdparty (<code>OCA</code>, <code>Cybrosys</code>, dll)</li>
+<li><code>addons-customize</code> berisikan modul kustomisasi kita sendiri.</li>
+</ul>
+<p>Selanjutnya, saya akan membahas Folder Conf lebih detail.</p>
+<hr>
+<p>Jika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan
+siap kamu gunakan.</p>
 <ol>
 <li>Buat Struktur Direktori</li>
 <li>Build Dockerfile untuk Odoo</li>
 <li>Buat Docker Compose</li>
 <li>Docker Compose Extension</li>
 </ol>
-<h3 id="struktur-direktori">Struktur Direktori<a hidden class="anchor" aria-hidden="true" href="#struktur-direktori">#</a></h3>
-<p><img loading="lazy" src="/images/01/struktur-direktori.jpg" alt="struktur-direktori"  />
-</p>
-<p>Silahkan buat Direktori dengan struktur seperti diatas.</p>
 <h3 id="dockerfile">Dockerfile<a hidden class="anchor" aria-hidden="true" href="#dockerfile">#</a></h3>
-<p>Selanjutnya kita akan membuat Dockerfile untuk Odoo 17. Silahkan sesuaikan dependensi yang akan di install.</p>
+<p>File ini adalah yang akan kita build menjadi docker images yang nantinya digunakan oleh project Odoo kita.
+Yang perlu diperhatikan adalah:</p>
+<ul>
+<li>Odoo Version yang ingin digunakan</li>
+<li>Package linux yang ingin di install</li>
+<li>Package dependensi python yang ingin digunakan</li>
+</ul>
+<p>Pada repo di atas, saya menggunakan konfigurasi Dockerfile seperti dibawah ini:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Docker" data-lang="Docker"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> odoo:17.0</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> root</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get -y update <span style="color:#f92672">&amp;&amp;</span> apt-get install -y git xmlsec1 vim zip<span style="color:#960050;background-color:#1e0010">
@@ -261,19 +276,20 @@ Jika belum, silahkan ikuti <a href="%5Bhttps://%5D(https://docs.docker.com/engin
 </span></span></span></code></pre></div><p>Untuk build image dari dockerfile, gunakan command berikut: <br>
 <code>docker build -t custom-odoo:17.0 .</code></p>
 <h3 id="docker-compose">Docker Compose<a hidden class="anchor" aria-hidden="true" href="#docker-compose">#</a></h3>
-<p>Silahkan buat file <code>docker-compose.yaml</code> dengan kode dibawah ini:</p>
+<p>Untuk konfigurasi <code>docker-compose.yaml</code> saya menggunakan seperti ini:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Docker" data-lang="Docker"><span style="display:flex;"><span>version: <span style="color:#e6db74">&#34;3.8&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  odoo-demo:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    image: custom-odoo:17.0<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    container_name: odoo-demo<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    <span style="color:#75715e"># env_file: myenvfile.env</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    env_file: myenvfile.env<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    depends_on:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - postgres-demo<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    volumes:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - odoo1-data-demo:/var/lib/odoo<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ./config/odoo:/etc/odoo<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ../../customize/extra-addons:/mnt/extra-addons<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ./config/odoo/demo:/etc/odoo<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ../../customize/odoo-demo/addons-customize:/mnt/addons-customize<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ../../customize/odoo-demo/addons-thirdparty:/mnt/addons-thirdparty<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    networks:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - demo_odoo_network<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
@@ -283,24 +299,32 @@ Jika belum, silahkan ikuti <a href="%5Bhttps://%5D(https://docs.docker.com/engin
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    env_file: myenvfile.env<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    volumes:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ./pg-data:/var/lib/pgsql/data/pgdata<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - ./config/postgresql/postgresql.conf:/etc/postgresql/postgresql.conf:ro<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    networks:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - demo_odoo_network<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># nginx-default:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   image: nginx:1.24.0</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   container_name: nginx-default</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   volumes:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#     - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   depends_on:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#     - odoo17-default</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   networks:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#     - default_odoo_network</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>volumes:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  odoo1-data-demo:<span style="color:#960050;background-color:#1e0010">
-</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    name: <span style="color:#e6db74">&#34;odoo1-data-demo&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>networks:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  demo_odoo_network:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    name: demo_odoo_network<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    driver: bridge<span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div><h3 id="docker-compose-extension">Docker Compose Extension<a hidden class="anchor" aria-hidden="true" href="#docker-compose-extension">#</a></h3>
-<p>Biasanya, kita menjalankan docker di lokal dan juga server namun dengan konfigurasi yg berbeda pada file <code>docker-compose.yaml</code>.
-Dengan alasan kemudahan untuk konfigurasi, disini penulis membuat ekstensi untuk file konfigurasi <code>docker-compose.yaml</code> dengan nama <code>dev.yaml</code> dan <code>prod.yaml</code>. <br>
-File <code>dev.yaml</code> digunakan untuk di lokal dan file <code>prod.yaml</code> digunakan untuk server. Isi dari kedua file tersebut mirip, tinggal disesuaikan saja dengan kebutuhan di lokal dan server. <br>
-Dibawah ini penulis menggunakan file <code>dev.yaml</code> sebagai contoh. Silahkan menyesuaikan <code>prod.yaml</code> untuk kebutuhan server kalian.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span>version: <span style="color:#e6db74">&#34;3.8&#34;</span><span style="color:#960050;background-color:#1e0010">
+<p>Docker Compose Extension digunakan supaya <code>docker-compose.yaml</code> lebih efision dan memudahkan dalam hal maintenis.
+Biasanya, saya menggunakan dua ekstensi. <code>dev.yaml</code> dan <code>prod.yaml</code>.</p>
+<h4 id="file-extension-devyaml">File extension dev.yaml<a hidden class="anchor" aria-hidden="true" href="#file-extension-devyaml">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Docker" data-lang="Docker"><span style="display:flex;"><span>version: <span style="color:#e6db74">&#34;3.8&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  odoo-demo:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    restart: unless-stopped<span style="color:#960050;background-color:#1e0010">
@@ -311,20 +335,94 @@ Dibawah ini penulis menggunakan file <code>dev.yaml</code> sebagai contoh. Silah
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    ports:<span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - <span style="color:#e6db74">&#34;5433:5432&#34;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    restart: unless-stopped<span style="color:#960050;background-color:#1e0010">
-</span></span></span></code></pre></div><p>Jika sudah membuat <code>docker-compose.yaml</code> dan <code>dev.yaml</code>, silahkan jalankan command docker berikut:
-<code>docker compose -f docker-compose.yaml -f dev.yaml up -d</code></p>
-<p><img loading="lazy" src="/images/01/docker-ps.jpg" alt="struktur-direktori"  />
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># nginx-demo:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   restart: no</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   ports:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#     - &#34;81:80&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h4 id="file-extension-prodyaml">File extension prod.yaml<a hidden class="anchor" aria-hidden="true" href="#file-extension-prodyaml">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Docker" data-lang="Docker"><span style="display:flex;"><span>version: <span style="color:#e6db74">&#34;3.8&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>services:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  odoo-demo:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    restart: unless-stopped<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    ports:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - <span style="color:#e6db74">&#34;8069:8069&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  postgres-demo:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    ports:<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>      - <span style="color:#e6db74">&#34;5434:5432&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>    restart: unless-stopped<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># nginx-demo:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   restart: always</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#   ports:</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e">#     - &#34;81:80&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="database">Database<a hidden class="anchor" aria-hidden="true" href="#database">#</a></h3>
+<p>Untuk database, saya menggunakan fitur docker bind mounts dimana ini memungkinkan untuk menyimpan file konfigurasi
+postgresql dan database nya disimpan di lokal folder, bukan di dalam volume.</p>
+<p>Folder <code>pg-data</code> berisikan file konfigurasi dan database dari postgresql.</p>
+<h3 id="file-environment">File Environment<a hidden class="anchor" aria-hidden="true" href="#file-environment">#</a></h3>
+<p>Untuk environment konfigurasi, saya biasa memisahkan konfigurasi environment setiap aplikasi docker ke dalam sebuah file bernama
+<code>myenvfile.env</code>.</p>
+<p>Saya menyimpan user dan password postgresql ke dalam <code>myenvfile.env</code> seperti dibawah ini:</p>
+<pre tabindex="0"><code class="language-dotenv" data-lang="dotenv"># postgresql env variables
+POSTGRES_DB=postgres
+POSTGRES_USER=odoodemo
+POSTGRES_PASSWORD=odoodemo123
+PGDATA=/var/lib/pgsql/data/pgdata
+
+# odoo env variables
+#HOST=postgres-demo
+#USER=odoodemo
+#PASSWORD=odoodemo123
+</code></pre><p>Alasan saya memisahkannya dari <code>docker-compose.yaml</code> adalah untuk modularisasi dan juga kebutuhan setiap user akan
+environment aplikasi biasanya berbeda-beda. Hal ini akan membuat <code>docker-compose.yaml</code> menjadi lebih general dalam
+penggunaannya.</p>
+<h3 id="file-konfigurasi-project">File Konfigurasi Project<a hidden class="anchor" aria-hidden="true" href="#file-konfigurasi-project">#</a></h3>
+<p>Biasanya juga, saya membuat sebuah folder yang berisikan file konfigurasi dari sebuah project secara khusus. Misalkan,
+saya membuat folder <code>odoo-demo</code> yang berisi file konfigurasi odoo secara spesifik hanya untuk project tertentu.</p>
+<p>Di dalam <code>odoo-demo</code> biasanya saya membuat folder:</p>
+<ul>
+<li>odoo : berisi file <code>odoo.conf</code></li>
+<li>postgresql : berisi file <code>postgresql.conf</code></li>
+<li>dan lainnya sesuai dengan kebutuh dari project tersebut</li>
+</ul>
+<p>Selanjutnya, kita akan coba menjalankan Odoo menggunakan Docker.</p>
+<hr>
+<h3 id="masuk-ke-dalam-folder-docker-compose">Masuk ke dalam folder docker compose<a hidden class="anchor" aria-hidden="true" href="#masuk-ke-dalam-folder-docker-compose">#</a></h3>
+<p><code>cd /conf/odoo-demo</code></p>
+<h3 id="jalankan-docker-compose">Jalankan docker compose<a hidden class="anchor" aria-hidden="true" href="#jalankan-docker-compose">#</a></h3>
+<p><code>docker compose -f docker-compose.yaml -f dev.yaml up -d</code></p>
+<h3 id="cek-status-docker-compose">Cek status docker compose<a hidden class="anchor" aria-hidden="true" href="#cek-status-docker-compose">#</a></h3>
+<p>Jika tidak ada masalah, jalan kan command di bawah ini untuk cek apakah servis Odoo dan Postgresql sudah berjalan.
+<code>docker ps -l</code>
+<img loading="lazy" src="/public/images/01/docker-ps.jpg" alt="docker-ps"  />
 </p>
-<p>Untuk cek apakah service docker sudah berjalan, silahkan gunakan command : <code>docker ps</code>.
-Untuk cek log dari aplikasi yang sedang berjalan, bisa menggunakan command: <code>docker compose logs -f</code>. <br>
-Atau, bisa juga melihat log berdasarkan container yang
-sedang berjalan menggunakan command: <code>docker container logs -f ID_Container</code>.</p>
+<h3 id="cara-cek-log">Cara Cek Log<a hidden class="anchor" aria-hidden="true" href="#cara-cek-log">#</a></h3>
+<p>Biasanya kita akan memerlukan pengecekan log saat servis docker sedang berjalan.
+Untuk cek log dari semua servis yang berada di docker compose sebanyak 200 message log terakhir, jalankan command:</p>
+<p><code>docker compose logs -f --tail 200</code></p>
+<p>Untuk cek log per container bisa menggunakan format dibawah ini:</p>
+<p><code>docker container logs -f --tail 200 &lt;idContainer&gt;</code></p>
+<h3 id="sukses">Sukses<a hidden class="anchor" aria-hidden="true" href="#sukses">#</a></h3>
 <p>Sekarang saatnya untuk menjalankan service docker di browser. Jika tidak ada masalah, seharusnya kita bisa mengakses aplikasi odoo pada alamat <code>http://localhost:8069/</code>.
-<img loading="lazy" src="/images/01/localhost.jpg" alt="struktur-direktori"  />
+<img loading="lazy" src="/public/images/01/localhost.jpg" alt="odoo-browser-first-install"  />
 </p>
-<h3 id="epilog">Epilog<a hidden class="anchor" aria-hidden="true" href="#epilog">#</a></h3>
-<p>Selamat, sekarang kalian sudah bisa meng-install Odoo dan Postgresql menggunakan docker. Dengan konfigurasi ini, teman-teman bisa meng-install multi-instance odoo dengan cara
-meng-copy direktory <code>odoo-demo</code> dan merubah konfigurasinya sesuai dengan kebutuhan teman-teman.</p>
+<hr>
+<h3 id="command-docker-lainnya">Command Docker lainnya<a hidden class="anchor" aria-hidden="true" href="#command-docker-lainnya">#</a></h3>
+<h5 id="restart-docker-compose">Restart docker compose<a hidden class="anchor" aria-hidden="true" href="#restart-docker-compose">#</a></h5>
+<p><code>docker compose -f docker-compose -f dev.yaml restart</code></p>
+<h5 id="stop-docker-compose">Stop docker compose<a hidden class="anchor" aria-hidden="true" href="#stop-docker-compose">#</a></h5>
+<p><code>docker compose -f docker-compose -f dev.yaml stop</code></p>
+<h5 id="start-docker-compose">Start docker compose<a hidden class="anchor" aria-hidden="true" href="#start-docker-compose">#</a></h5>
+<p><code>docker compose -f docker-compose -f dev.yaml start</code></p>
+<h5 id="restart-docker-container">Restart docker container<a hidden class="anchor" aria-hidden="true" href="#restart-docker-container">#</a></h5>
+<p><code>docker container &lt;idContainer&gt; restart</code></p>
+<hr>
+<h3 id="penutup">Penutup<a hidden class="anchor" aria-hidden="true" href="#penutup">#</a></h3>
+<p>Selamat, sekarang kalian sudah bisa meng-install Odoo dan Postgresql menggunakan docker.
+Dengan konfigurasi dasar ini, selanjutnya kalian bisa install multi instance odoo yang kelak akan di bahas di artikel
+lainnya.</p>
 <p>Terimakasih.</p>
 
 
