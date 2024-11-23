@@ -12,8 +12,12 @@ publishDir = "docs"
 [params]
     ShowBreadCrumbs = true
     ShowReadingTime = true
-    ShowShareButtons = true
+    ShowShareButtons = false
     ShowPostNavLinks = true
+
+[params.homeInfoParams]
+    Title= "Hi, I'am Rohim Muhamad."
+    Content= "This blog is all about my experience in the world of software engineer."
 
 [menus]
   [[menus.main]]
@@ -28,5 +32,4 @@ publishDir = "docs"
     name = 'Tags'
     pageRef = '/tags/'
     weight = 30
-
 
