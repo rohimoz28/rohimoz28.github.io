@@ -16,7 +16,7 @@ github saya. Silahkan di fork atau di clone di lokal kalian.
 
 Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. `conf` `customize`. 
 Struktur folder kalian akan tampak seperti ini:
-![struktur-direktori](/public/images/01/struktur-direktori.jpg)
+![struktur-direktori](images/struktur-direktori.jpg)
 
 ## 1. Folder Conf
 Folder ini berisikan file - file konfigurasi dari : 
@@ -216,7 +216,7 @@ Selanjutnya, kita akan coba menjalankan Odoo menggunakan Docker.
 ### Cek status docker compose
 Jika tidak ada masalah, jalan kan command di bawah ini untuk cek apakah servis Odoo dan Postgresql sudah berjalan.
 `docker ps -l`
-![docker-ps](/public/images/01/docker-ps.jpg)
+![docker-ps](images/docker-ps.jpg)
 
 ### Cara Cek Log
 Biasanya kita akan memerlukan pengecekan log saat servis docker sedang berjalan.
@@ -230,7 +230,7 @@ Untuk cek log per container bisa menggunakan format dibawah ini:
 
 ### Sukses
 Sekarang saatnya untuk menjalankan service docker di browser. Jika tidak ada masalah, seharusnya kita bisa mengakses aplikasi odoo pada alamat `http://localhost:8069/`.
-![odoo-browser-first-install](/public/images/01/localhost.jpg)
+![odoo-browser-first-install](images/localhost.jpg)
 
 ---
 
