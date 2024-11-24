@@ -141,5 +141,6 @@ Menginstall banyak odoo instance menggunakan satu database cocok untuk skenario 
 - Punya banyak project odoo dengan versi berbeda-beda
 - Ingin mencoba odoo versi lain
 - Tidak ingin menginstall Odoo langsung di mesin lokal kalian
+- Membuat struktur folder lebih efisien
 
 Terima Kasih!
