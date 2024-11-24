@@ -2,7 +2,7 @@
 title = 'Docker Multi Instance Odoo'
 description = 'tutorial dan cara install banyak odoo instance dengan docker'
 date = 2024-09-29T19:03:00+07:00
-draft = true
+draft = false
 categories = ['Dev Ops']
 tags = ['docker', 'odoo']
 summary = "A brief step of installing odoo multi instance"

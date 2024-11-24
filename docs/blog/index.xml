@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Rohimoz28</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Sep 2024 18:41:16 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2024 19:03:00 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Multi Instance Odoo</title>
+      <link>https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/</link>
+      <pubDate>Sun, 29 Sep 2024 19:03:00 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/</guid>
+      <description>tutorial dan cara install banyak odoo instance dengan docker</description>
+    </item>
     <item>
       <title>Install Odoo 17 Menggunakan Docker</title>
       <link>https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/</link>
