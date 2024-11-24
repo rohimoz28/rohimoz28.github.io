@@ -14,18 +14,20 @@ Jika belum, silahkan ikuti [Tutorial Install Docker]([https://](https://docs.doc
 Untuk tuorial kali ini, akan menggunakan source code dari [repository](https://github.com/rohimoz28/odoo-docker)
 github saya. Silahkan di fork atau di clone di lokal kalian.
 
+## Struktur Folder
+
 Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. `conf` `customize`. 
 Struktur folder kalian akan tampak seperti ini:
 ![struktur-direktori](images/struktur-direktori.jpg)
 
-## 1. Folder Conf
+### Folder Conf
 Folder ini berisikan file - file konfigurasi dari : 
 - Docker (`docker-compose.yaml`, `Dockerfile`, `dev.yaml`, `prod.yaml`)
 - Database (`pg-data`)
 - File Konfigurasi Project (`odoo-demo`)
 - Secret File Konfigurasi (`myenvfile.env`)
 
-## 2. Folder Customize
+### Folder Customize
 Folder ini berisikan modul kustomisasi odoo. Biasanya, saya membedakan antara modul kustomisasi yang di install dari
 thirdparty dengan modul murni hasil kustomisasi kita sendiri.
 - `addons-thirdparty` berisikan modul yang berasal dari thirdparty (`OCA`, `Cybrosys`, dll)
@@ -42,7 +44,7 @@ siap kamu gunakan.
 3. Buat Docker Compose
 4. Docker Compose Extension
 
-### Dockerfile
+## Dockerfile
 File ini adalah yang akan kita build menjadi docker images yang nantinya digunakan oleh project Odoo kita.
 Yang perlu diperhatikan adalah:
 - Odoo Version yang ingin digunakan
@@ -74,7 +76,7 @@ RUN pip3 install --no-cache-dir zxcvbn
 Untuk build image dari dockerfile, gunakan command berikut: \
 `docker build -t custom-odoo:17.0 .`
 
-### Docker Compose
+## Docker Compose
 Untuk konfigurasi `docker-compose.yaml` saya menggunakan seperti ini:
 ```Docker
 version: "3.8"
@@ -122,11 +124,11 @@ networks:
     driver: bridge
 ```
 
-### Docker Compose Extension
+## Docker Compose Extension
 Docker Compose Extension digunakan supaya `docker-compose.yaml` lebih efision dan memudahkan dalam hal maintenis.
 Biasanya, saya menggunakan dua ekstensi. `dev.yaml` dan `prod.yaml`. 
 
-#### File extension dev.yaml
+### File extension dev.yaml
 ```Docker
 version: "3.8"
 services:
@@ -146,7 +148,7 @@ services:
   #     - "81:80"
 ```
 
-#### File extension prod.yaml
+### File extension prod.yaml
 ```Docker
 version: "3.8"
 services:
@@ -166,13 +168,13 @@ services:
   #     - "81:80"
 ```
 
-### Database
+## Database
 Untuk database, saya menggunakan fitur docker bind mounts dimana ini memungkinkan untuk menyimpan file konfigurasi
 postgresql dan database nya disimpan di lokal folder, bukan di dalam volume.
 
 Folder `pg-data` berisikan file konfigurasi dan database dari postgresql.
 
-### File Environment
+## File Environment
 Untuk environment konfigurasi, saya biasa memisahkan konfigurasi environment setiap aplikasi docker ke dalam sebuah file bernama
 `myenvfile.env`.
 
@@ -194,7 +196,7 @@ Alasan saya memisahkannya dari `docker-compose.yaml` adalah untuk modularisasi d
 environment aplikasi biasanya berbeda-beda. Hal ini akan membuat `docker-compose.yaml` menjadi lebih general dalam
 penggunaannya.
 
-### File Konfigurasi Project
+## File Konfigurasi Project
 Biasanya juga, saya membuat sebuah folder yang berisikan file konfigurasi dari sebuah project secara khusus. Misalkan,
 saya membuat folder `odoo-demo` yang berisi file konfigurasi odoo secara spesifik hanya untuk project tertentu.
 
@@ -205,55 +207,51 @@ Di dalam `odoo-demo` biasanya saya membuat folder:
 
 Selanjutnya, kita akan coba menjalankan Odoo menggunakan Docker.
 
----
+## Coba Jalankan Docker Compose
 
-### Masuk ke dalam folder docker compose
+**Masuk ke dalam folder docker compose**\
 `cd /conf/odoo-demo`
 
-### Jalankan docker compose
+**Jalankan docker compose**\
 `docker compose -f docker-compose.yaml -f dev.yaml up -d`
 
-### Cek status docker compose
+**Cek status docker compose**\
 Jika tidak ada masalah, jalan kan command di bawah ini untuk cek apakah servis Odoo dan Postgresql sudah berjalan.
 `docker ps -l`
 ![docker-ps](images/docker-ps.jpg)
 
-### Cara Cek Log
+**Cara Cek Log Semua Service Docker Compose**\
 Biasanya kita akan memerlukan pengecekan log saat servis docker sedang berjalan.
-Untuk cek log dari semua servis yang berada di docker compose sebanyak 200 message log terakhir, jalankan command:
-
+Untuk cek log dari semua servis yang berada di docker compose sebanyak 200 message log terakhir, 
+jalankan command:\
 `docker compose logs -f --tail 200`
 
-Untuk cek log per container bisa menggunakan format dibawah ini:
-
+**Cek log per container**\
 `docker container logs -f --tail 200 <idContainer>`
 
-### Sukses
+### Testing
 Sekarang saatnya untuk menjalankan service docker di browser. Jika tidak ada masalah, seharusnya kita bisa mengakses aplikasi odoo pada alamat `http://localhost:8069/`.
 ![odoo-browser-first-install](images/localhost.jpg)
 
 ---
 
-### Command Docker lainnya
+## Command Docker lainnya
 
-##### Restart docker compose
-
+**Restart docker compose**\
 `docker compose -f docker-compose -f dev.yaml restart`
 
-##### Stop docker compose
-
+**Stop docker compose**\
 `docker compose -f docker-compose -f dev.yaml stop`
 
-##### Start docker compose
-
+**Start docker compose**\
 `docker compose -f docker-compose -f dev.yaml start`
 
-##### Restart docker container
+**Restart docker container**\
 `docker container <idContainer> restart`
 
 ---
 
-### Penutup
+## Penutup
 Selamat, sekarang kalian sudah bisa meng-install Odoo dan Postgresql menggunakan docker. 
 Dengan konfigurasi dasar ini, selanjutnya kalian bisa install multi instance odoo yang kelak akan di bahas di artikel
 lainnya.

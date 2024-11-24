@@ -18,6 +18,7 @@ Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install 
 Jika belum, silahkan ikuti &lt;a href=&#34;%5Bhttps://%5D(https://docs.docker.com/engine/install/)&#34;&gt;Tutorial Install Docker&lt;/a&gt; dari laman resminya.&lt;/p&gt;
 &lt;p&gt;Untuk tuorial kali ini, akan menggunakan source code dari &lt;a href=&#34;https://github.com/rohimoz28/odoo-docker&#34;&gt;repository&lt;/a&gt;
 github saya. Silahkan di fork atau di clone di lokal kalian.&lt;/p&gt;
+&lt;h2 id=&#34;struktur-folder&#34;&gt;Struktur Folder&lt;/h2&gt;
 &lt;p&gt;Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. &lt;code&gt;conf&lt;/code&gt; &lt;code&gt;customize&lt;/code&gt;.
 Struktur folder kalian akan tampak seperti ini:
 &lt;img loading=&#34;lazy&#34; src=&#34;images/struktur-direktori.jpg&#34; alt=&#34;struktur-direktori&#34;  /&gt;
