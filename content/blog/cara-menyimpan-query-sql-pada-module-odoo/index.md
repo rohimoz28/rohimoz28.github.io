@@ -1,7 +1,7 @@
 +++
 title = 'Cara Menyimpan Query SQL Pada Modul Odoo'
 date = 2024-11-26T18:41:16+07:00
-draft = true
+draft = false
 tags = ['odoo']
 categories = ['Web Dev']
 +++
