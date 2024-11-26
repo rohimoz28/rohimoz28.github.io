@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dev Ops on Rohimoz28</title>
-    <link>https://rohimoz28.github.io/categories/dev-ops/</link>
+    <link>http://localhost:1313/categories/dev-ops/</link>
     <description>Recent content in Dev Ops on Rohimoz28</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Sep 2024 19:03:00 +0700</lastBuildDate>
-    <atom:link href="https://rohimoz28.github.io/categories/dev-ops/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/dev-ops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Multi Instance Odoo</title>
-      <link>https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/</link>
+      <link>http://localhost:1313/blog/install-multi-odoo-instance-menggunakan-docker/</link>
       <pubDate>Sun, 29 Sep 2024 19:03:00 +0700</pubDate>
-      <guid>https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/</guid>
+      <guid>http://localhost:1313/blog/install-multi-odoo-instance-menggunakan-docker/</guid>
       <description>tutorial dan cara install banyak odoo instance dengan docker</description>
     </item>
     <item>
       <title>Relokasi Docker</title>
-      <link>https://rohimoz28.github.io/blog/relokasi-docker/</link>
+      <link>http://localhost:1313/blog/relokasi-docker/</link>
       <pubDate>Thu, 29 Aug 2024 18:41:16 +0700</pubDate>
-      <guid>https://rohimoz28.github.io/blog/relokasi-docker/</guid>
+      <guid>http://localhost:1313/blog/relokasi-docker/</guid>
       <description>&lt;h3 id=&#34;latar-belakang-masalah&#34;&gt;Latar Belakang Masalah&lt;/h3&gt;
 &lt;p&gt;Secara default, direktori docker terletak pada &lt;code&gt;/var/lib/docker&lt;/code&gt;. Ada kalanya, ketika docker image , volume dan container sudah terlalu besar sehingga memakan storage. Kita ingin memindahkan letak direktori docker ini agar tidak memakan storage &lt;code&gt;root&lt;/code&gt; kita yang pada akhirnya akan menghentikan service docker itu sendiri.&lt;/p&gt;
 &lt;h3 id=&#34;solusi&#34;&gt;Solusi&lt;/h3&gt;
