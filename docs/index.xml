@@ -6,8 +6,15 @@
     <description>Recent content on Rohimoz28</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2024 18:41:16 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2024 12:26:32 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Membuat Notifikasi Menggunakan Webhook Discord</title>
+      <link>https://rohimoz28.github.io/blog/membuat-notifikasi-menggunakan-webhook-discord/</link>
+      <pubDate>Sat, 14 Dec 2024 12:26:32 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/membuat-notifikasi-menggunakan-webhook-discord/</guid>
+      <description>Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord</description>
+    </item>
     <item>
       <title>Cara Menyimpan Query SQL Pada Modul Odoo</title>
       <link>https://rohimoz28.github.io/blog/cara-menyimpan-query-sql-pada-module-odoo/</link>
