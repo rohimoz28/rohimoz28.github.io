@@ -3,6 +3,8 @@ title = 'Membuat Notifikasi Menggunakan Webhook Discord'
 date = '2024-12-14T12:26:32+07:00'
 draft = false
 description = 'Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord'
+tags = ['webhook']
+categories = ['DevOps']
 +++
 
 
