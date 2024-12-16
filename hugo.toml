@@ -15,6 +15,7 @@ enableEmoji = true
     ShowPostNavLinks = true
     ShareButtons = ['linkedin', 'whatsapp', 'telegram']
     ShowToc= true
+    social= true
 
 [[params.socialIcons]]
     name = "linkedin"
