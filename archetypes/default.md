@@ -1,6 +1,6 @@
 +++
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-description = '{{ your description }}'
-date = {{ .Date }}
+description = ''
+date = '{{ .Date }}'
 draft = true
 +++
