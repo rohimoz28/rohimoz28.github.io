@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Membuat Notifikasi Menggunakan Webhook Discord | Rohimoz28</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="webhook">
 <meta name="description" content="Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord">
 <meta name="author" content="">
 <link rel="canonical" href="https://rohimoz28.github.io/blog/membuat-notifikasi-menggunakan-webhook-discord/">
@@ -95,7 +95,7 @@
   "name": "Membuat Notifikasi Menggunakan Webhook Discord",
   "description": "Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord",
   "keywords": [
-    
+    "webhook"
   ],
   "articleBody": "Webhook Webhook adalah sebuah metode untuk memungkinkan aplikasi atau layanan berkomunikasi satu sama lain secara otomatis melalui HTTP request. Secara sederhana, webhook adalah cara bagi satu aplikasi untuk memberi tahu aplikasi lain tentang suatu kejadian (event) atau peristiwa yang terjadi secara real-time.\nKeuntungan Menggunakan Webhook Real-Time: Webhook memungkinkan komunikasi yang cepat dan real-time antara aplikasi atau sistem. Efisien: Daripada aplikasi penerima harus secara terus-menerus memeriksa data (polling), webhook hanya mengirimkan data ketika terjadi perubahan, sehingga lebih efisien dalam hal penggunaan sumber daya. Automatisasi: Webhook dapat digunakan untuk mengotomatisasi alur kerja atau tindakan berdasarkan event yang terjadi, seperti mengirimkan pemberitahuan, memperbarui database, atau menjalankan skrip otomatis. Latar Belakang Masalah Ketika melakukan event mengeksekusi di server menggunakan script .sh perlu ada mekanisme mengirim notifikasi ketika ada error dalam proses tersebut. Ada banyak pilihan, tapi disini saya memilih untuk menggunakan Webhook Discord.\nAlasannya, pertama gratis. Kedua, karena discord adalah chat. Maka, kita bisa mengajak orang-orang yang berkepentingan terhadap notifikasi tersebut kedalam group chat.\nMendapatkan URL Webhook Discord Contoh Script Backup Database Dengan Webhook #!/bin/bash # Define variables BACKUP_DIR=\"/path/to/your/backup/dir\" DB_NAME=\"database_name\" DB_USER=\"your_username\" DB_PASSWORD=\"your_password\" DB_HOST=\"ip_address\" DISCORD_WEBHOOK_URL=\"your_discord_webhook_url\" # Define a function to send a message to Discord send_discord_notification() { local message=$1 # Construct payload local payload=$(cat \u003c",
   "wordCount" : "579",
@@ -332,8 +332,14 @@ Kedepannya, bisa juga menambahkan orang-orang yang memerlukan notifikasi tersebu
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="https://rohimoz28.github.io/tags/webhook/">Webhook</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Cara Debug Odoo Di Docker Menggunakan Pdb</span>
+  </a>
   <a class="next" href="https://rohimoz28.github.io/blog/cara-menyimpan-query-sql-pada-module-odoo/">
     <span class="title">Next »</span>
     <br>
