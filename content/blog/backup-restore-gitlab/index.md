@@ -1,5 +1,5 @@
 +++
-title = 'Backup Restore Gitlab'
+title = 'Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda'
 date = '2024-12-24T11:52:59+07:00'
 draft = false
 description = 'Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda'

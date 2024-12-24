@@ -9,7 +9,7 @@
     <lastBuildDate>Tue, 24 Dec 2024 11:52:59 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Backup Restore Gitlab</title>
+      <title>Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda</title>
       <link>https://rohimoz28.github.io/blog/backup-restore-gitlab/</link>
       <pubDate>Tue, 24 Dec 2024 11:52:59 +0700</pubDate>
       <guid>https://rohimoz28.github.io/blog/backup-restore-gitlab/</guid>
