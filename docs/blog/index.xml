@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on Rohimoz28</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Dec 2024 13:27:39 +0700</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2024 11:52:59 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backup Restore Gitlab</title>
+      <link>https://rohimoz28.github.io/blog/backup-restore-gitlab/</link>
+      <pubDate>Tue, 24 Dec 2024 11:52:59 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/backup-restore-gitlab/</guid>
+      <description>Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda</description>
+    </item>
     <item>
       <title>Cara Debug Odoo Di Docker Menggunakan Pdb</title>
       <link>https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</link>
