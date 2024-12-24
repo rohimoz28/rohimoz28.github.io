@@ -83,10 +83,10 @@ Berikut isi dari file script tersebut.
 ```
 #/bin/sh
 #script to automate the gitlab backup and save it in folder /Mohamed.Emam/gitlab-backup
-docker exec -it 2ce7236d3756 gitlab-rake gitlab:backup:create
-docker cp gitlab:/var/opt/gitlab/backups/ /home/Mohamed.Emam/gitlab-backup
-docker cp gitlab:/etc/gitlab/gitlab.rb /home/Mohamed.Emam/gitlab-backup
-docker cp gitlab:/etc/gitlab/gitlab-secrets.json /home/Mohamed.Emam/gitlab-backup
+docker exec -it gitlab gitlab-rake gitlab:backup:create
+docker cp gitlab:/var/opt/gitlab/backups/ /path/to/gitlab-backup
+docker cp gitlab:/etc/gitlab/gitlab.rb /path/to/gitlab-backup
+docker cp gitlab:/etc/gitlab/gitlab-secrets.json /path/to/gitlab-backup
 ```
 
 ## Kesimpulan
