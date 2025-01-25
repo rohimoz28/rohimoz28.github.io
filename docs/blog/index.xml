@@ -48,13 +48,6 @@ Tambahkan kedua line dibawah ini pada pengaturan &lt;code&gt;docker-compose.yaml
       <description>Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord</description>
     </item>
     <item>
-      <title>Odoo Scheduled Actions</title>
-      <link>https://rohimoz28.github.io/blog/odoo-scheduled-actions/</link>
-      <pubDate>Mon, 02 Dec 2024 22:03:36 +0700</pubDate>
-      <guid>https://rohimoz28.github.io/blog/odoo-scheduled-actions/</guid>
-      <description>Tutorial Cara Membuat Scheduled Actions Pada Odoo 17</description>
-    </item>
-    <item>
       <title>Cara Menyimpan Query SQL Pada Modul Odoo</title>
       <link>https://rohimoz28.github.io/blog/cara-menyimpan-query-sql-pada-module-odoo/</link>
       <pubDate>Tue, 26 Nov 2024 18:41:16 +0700</pubDate>

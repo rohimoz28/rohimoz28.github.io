@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Install Odoo 17 Menggunakan Docker | Rohimoz28</title>
 <meta name="keywords" content="odoo, docker">
 <meta name="description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
@@ -64,7 +64,85 @@ Struktur folder kalian akan tampak seperti ini:
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Install Odoo 17 Menggunakan Docker" />
+<meta property="og:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Struktur Folder
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-09-29T18:41:16+07:00" />
+<meta property="article:modified_time" content="2024-09-29T18:41:16+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install Odoo 17 Menggunakan Docker"/>
+<meta name="twitter:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Struktur Folder
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
+
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://rohimoz28.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Install Odoo 17 Menggunakan Docker",
+      "item": "https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Install Odoo 17 Menggunakan Docker",
+  "name": "Install Odoo 17 Menggunakan Docker",
+  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nUntuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.\nStruktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize. Struktur folder kalian akan tampak seperti ini: ",
+  "keywords": [
+    "odoo", "docker"
+  ],
+  "articleBody": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nUntuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.\nStruktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize. Struktur folder kalian akan tampak seperti ini: Folder Conf Folder ini berisikan file - file konfigurasi dari :\nDocker (docker-compose.yaml, Dockerfile, dev.yaml, prod.yaml) Database (pg-data) File Konfigurasi Project (odoo-demo) Secret File Konfigurasi (myenvfile.env) Folder Customize Folder ini berisikan modul kustomisasi odoo. Biasanya, saya membedakan antara modul kustomisasi yang di install dari thirdparty dengan modul murni hasil kustomisasi kita sendiri.\naddons-thirdparty berisikan modul yang berasal dari thirdparty (OCA, Cybrosys, dll) addons-customize berisikan modul kustomisasi kita sendiri. Selanjutnya, saya akan membahas Folder Conf lebih detail.\nJika sudah, akan ada beberapa langkah yang kamu harus ikuti sampai Odoo dan Postgresql berhasil terinstall dan siap kamu gunakan.\nBuat Struktur Direktori Build Dockerfile untuk Odoo Buat Docker Compose Docker Compose Extension Dockerfile File ini adalah yang akan kita build menjadi docker images yang nantinya digunakan oleh project Odoo kita. Yang perlu diperhatikan adalah:\nOdoo Version yang ingin digunakan Package linux yang ingin di install Package dependensi python yang ingin digunakan Pada repo di atas, saya menggunakan konfigurasi Dockerfile seperti dibawah ini:\nFROM odoo:17.0 USER root RUN apt-get -y update \u0026\u0026 apt-get install -y git xmlsec1 vim zip RUN pip3 install --upgrade --no-cache-dir pip RUN pip3 install --no-cache-dir astor RUN pip3 install --no-cache-dir cachetools RUN pip3 install --no-cache-dir openupgradelib RUN pip3 install --no-cache-dir wheel RUN pip3 install --no-cache-dir pandas RUN pip3 install --no-cache-dir mdb-parser RUN pip3 install --no-cache-dir holidays RUN pip3 install --no-cache-dir bigjson RUN pip3 install --no-cache-dir pymysql RUN pip3 install --no-cache-dir formats RUN pip3 install --no-cache-dir py3o.formats RUN pip3 install --no-cache-dir py3o.template # Password security RUN pip3 install --no-cache-dir zxcvbn Untuk build image dari dockerfile, gunakan command berikut: docker build -t custom-odoo:17.0 .\nDocker Compose Untuk konfigurasi docker-compose.yaml saya menggunakan seperti ini:\nversion: \"3.8\" services: odoo-demo: image: custom-odoo:17.0 container_name: odoo-demo env_file: myenvfile.env depends_on: - postgres-demo volumes: - odoo1-data-demo:/var/lib/odoo - ./config/odoo/demo:/etc/odoo - ../../customize/odoo-demo/addons-customize:/mnt/addons-customize - ../../customize/odoo-demo/addons-thirdparty:/mnt/addons-thirdparty networks: - demo_odoo_network postgres-demo: image: postgres:15 container_name: postgres-demo env_file: myenvfile.env volumes: - ./pg-data:/var/lib/pgsql/data/pgdata - ./config/postgresql/postgresql.conf:/etc/postgresql/postgresql.conf:ro networks: - demo_odoo_network # nginx-default: # image: nginx:1.24.0 # container_name: nginx-default # volumes: # - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf # depends_on: # - odoo17-default # networks: # - default_odoo_network volumes: odoo1-data-demo: networks: demo_odoo_network: name: demo_odoo_network driver: bridge Docker Compose Extension Docker Compose Extension digunakan supaya docker-compose.yaml lebih efision dan memudahkan dalam hal maintenis. Biasanya, saya menggunakan dua ekstensi. dev.yaml dan prod.yaml.\nFile extension dev.yaml version: \"3.8\" services: odoo-demo: restart: unless-stopped ports: - \"8069:8069\" postgres-demo: ports: - \"5433:5432\" restart: unless-stopped # nginx-demo: # restart: no # ports: # - \"81:80\" File extension prod.yaml version: \"3.8\" services: odoo-demo: restart: unless-stopped ports: - \"8069:8069\" postgres-demo: ports: - \"5434:5432\" restart: unless-stopped # nginx-demo: # restart: always # ports: # - \"81:80\" Database Untuk database, saya menggunakan fitur docker bind mounts dimana ini memungkinkan untuk menyimpan file konfigurasi postgresql dan database nya disimpan di lokal folder, bukan di dalam volume.\nFolder pg-data berisikan file konfigurasi dan database dari postgresql.\nFile Environment Untuk environment konfigurasi, saya biasa memisahkan konfigurasi environment setiap aplikasi docker ke dalam sebuah file bernama myenvfile.env.\nSaya menyimpan user dan password postgresql ke dalam myenvfile.env seperti dibawah ini:\n# postgresql env variables\rPOSTGRES_DB=postgres\rPOSTGRES_USER=odoodemo\rPOSTGRES_PASSWORD=odoodemo123\rPGDATA=/var/lib/pgsql/data/pgdata\r# odoo env variables\r#HOST=postgres-demo\r#USER=odoodemo\r#PASSWORD=odoodemo123 Alasan saya memisahkannya dari docker-compose.yaml adalah untuk modularisasi dan juga kebutuhan setiap user akan environment aplikasi biasanya berbeda-beda. Hal ini akan membuat docker-compose.yaml menjadi lebih general dalam penggunaannya.\nFile Konfigurasi Project Biasanya juga, saya membuat sebuah folder yang berisikan file konfigurasi dari sebuah project secara khusus. Misalkan, saya membuat folder odoo-demo yang berisi file konfigurasi odoo secara spesifik hanya untuk project tertentu.\nDi dalam odoo-demo biasanya saya membuat folder:\nodoo : berisi file odoo.conf postgresql : berisi file postgresql.conf dan lainnya sesuai dengan kebutuh dari project tersebut Selanjutnya, kita akan coba menjalankan Odoo menggunakan Docker.\nCoba Jalankan Docker Compose Masuk ke dalam folder docker compose\ncd /conf/odoo-demo\nJalankan docker compose\ndocker compose -f docker-compose.yaml -f dev.yaml up -d\nCek status docker compose\nJika tidak ada masalah, jalan kan command di bawah ini untuk cek apakah servis Odoo dan Postgresql sudah berjalan. docker ps -l Cara Cek Log Semua Service Docker Compose\nBiasanya kita akan memerlukan pengecekan log saat servis docker sedang berjalan. Untuk cek log dari semua servis yang berada di docker compose sebanyak 200 message log terakhir, jalankan command:\ndocker compose logs -f --tail 200\nCek log per container\ndocker container logs -f --tail 200 Testing Sekarang saatnya untuk menjalankan service docker di browser. Jika tidak ada masalah, seharusnya kita bisa mengakses aplikasi odoo pada alamat http://localhost:8069/. Command Docker lainnya Restart docker compose\ndocker compose -f docker-compose -f dev.yaml restart\nStop docker compose\ndocker compose -f docker-compose -f dev.yaml stop\nStart docker compose\ndocker compose -f docker-compose -f dev.yaml start\nRestart docker container\ndocker container restart\nPenutup Selamat, sekarang kalian sudah bisa meng-install Odoo dan Postgresql menggunakan docker. Dengan konfigurasi dasar ini, selanjutnya kalian bisa install multi instance odoo yang kelak akan di bahas di artikel lainnya.\nTerimakasih.\n",
+  "wordCount" : "877",
+  "inLanguage": "en",
+  "datePublished": "2024-09-29T18:41:16+07:00",
+  "dateModified": "2024-09-29T18:41:16+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rohimoz28",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rohimoz28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">

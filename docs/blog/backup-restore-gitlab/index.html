@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda | Rohimoz28</title>
 <meta name="keywords" content="git, gitlab">
 <meta name="description" content="Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda">
@@ -55,7 +55,67 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda" />
+<meta property="og:description" content="Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rohimoz28.github.io/blog/backup-restore-gitlab/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-12-24T11:52:59+07:00" />
+<meta property="article:modified_time" content="2024-12-24T11:52:59+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda"/>
+<meta name="twitter:description" content="Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://rohimoz28.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda",
+      "item": "https://rohimoz28.github.io/blog/backup-restore-gitlab/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda",
+  "name": "Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda",
+  "description": "Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda",
+  "keywords": [
+    "git", "gitlab"
+  ],
+  "articleBody": "Latar Belakang Masalah Adakalanya, karena beberapa masalah, jadi mengharuskan kita untuk memindahkan GitLab ke server lain. Jika ingin melihat garis besar cara backup dan restore GitLab, teman-teman bisa lihat dokumentasinya langsung di Overview Backup Restore Gitlab.\nAtau, jika ingin langsung praktik, bisa mengikuti Tutorial berikut pada artikel ini.\nPrerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah terinstall di kedua server menggunakan docker. Storage yang mencukupi, karena file backup GitLab cukup besar (2GB ++). Backup # Lokasi default file backup di /var/opt/gitlab/backups docker exec -t gitlab-rake gitlab:backup:create # copy file hasil backup, dari container ke host machine docker cp :/var/opt/gitlab/backups/ . # backup file gitlab-secrets.json docker cp :/etc/gitlab/gitlab-secrets.json . # backup file gitlab.rb docker cp :/etc/gitlab/gitlab.rb . Kemudian, file hasil backup dijadikan satu kedalam sebuah folder, misalkan backup_dir. Lalu lakukan compress dengan command : tar -zcvf backup_dir.tar.gz backup_dir\nMigrasi Pertama, kita harus login sebagai user di server yang nantinya akan menjadi tempat restore GitLab.\nscp yourUsername@yourIPAddress:/path/to/compressed/backup/file /path/to/backup/folder Restore # copy file backup ke lokasi default di dalam container docker cp :/var/opt/gitlab/backups # ubah user permission untuk file backup docker exec -it chown git:git /var/opt/gitlab/backups/ # jalankan command untuk restore file backup docker exec -it gitlab-rake gitlab:backup:restore # restore gitlab-secrets.json docker cp gitlab-secrets.json :/etc/gitlab/gitlab-secrets.json # restore gitlab.rb docker cp gitlab.rb :/etc/gitlab/gitlab.rb # restart gitlab command docker exec -it gitlab gitlab-ctl reconfigure Contoh Kasus Masalah File Permission sudo docker exec -it gitlab update-permissions sudo docker restart gitlab Masalah Servis Down docker exec -it gitlab-server gitlab-ctl stop docker exec -it gitlab-server gitlab-ctl start Backup Otomatis (Opsional) Backup otomatis disini akan menggunakan sebuah shell script yang nantinya akan dijalankan otomatis menggunakan cronjob. Berikut isi dari file script tersebut.\n#/bin/sh #script to automate the gitlab backup and save it in folder /Mohamed.Emam/gitlab-backup docker exec -it gitlab gitlab-rake gitlab:backup:create docker cp gitlab:/var/opt/gitlab/backups/ /path/to/gitlab-backup docker cp gitlab:/etc/gitlab/gitlab.rb /path/to/gitlab-backup docker cp gitlab:/etc/gitlab/gitlab-secrets.json /path/to/gitlab-backup Kesimpulan Pada artikel ini, dijelaskan tata cara untuk melakukan backup, transfer file backup ke server berbeda, restore file backup menggunakan docker, serta cara membuat script shell untuk keperluan backup otomatis.\nTerimakasih.\n",
+  "wordCount" : "366",
+  "inLanguage": "en",
+  "datePublished": "2024-12-24T11:52:59+07:00",
+  "dateModified": "2024-12-24T11:52:59+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rohimoz28.github.io/blog/backup-restore-gitlab/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rohimoz28",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rohimoz28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">

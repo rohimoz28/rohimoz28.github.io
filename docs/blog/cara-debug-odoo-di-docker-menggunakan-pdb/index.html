@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Cara Debug Odoo Di Docker Menggunakan Pdb | Rohimoz28</title>
 <meta name="keywords" content="docker, odoo">
 <meta name="description" content="Latar Belakang Masalah
@@ -66,7 +66,89 @@ Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml.">
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Cara Debug Odoo Di Docker Menggunakan Pdb" />
+<meta property="og:description" content="Latar Belakang Masalah
+Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
+menggunakan python package pdb.
+Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan
+package tersebut.
+Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker.
+Kali ini, kita akan menggunakan VSCode sebagai text editor.
+Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
+1. Menggunakan Metode Attach Container
+Baik digunakan di local development environment. 
+Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging.
+Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-12-16T13:27:39+07:00" />
+<meta property="article:modified_time" content="2024-12-16T13:27:39+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cara Debug Odoo Di Docker Menggunakan Pdb"/>
+<meta name="twitter:description" content="Latar Belakang Masalah
+Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
+menggunakan python package pdb.
+Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan
+package tersebut.
+Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker.
+Kali ini, kita akan menggunakan VSCode sebagai text editor.
+Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
+1. Menggunakan Metode Attach Container
+Baik digunakan di local development environment. 
+Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging.
+Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://rohimoz28.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Cara Debug Odoo Di Docker Menggunakan Pdb",
+      "item": "https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cara Debug Odoo Di Docker Menggunakan Pdb",
+  "name": "Cara Debug Odoo Di Docker Menggunakan Pdb",
+  "description": "Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.\nDalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.\nAda dua cara untuk melakukan debugging saat develop menggunakan docker.\n1. Menggunakan Metode Attach Container Baik digunakan di local development environment. Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging. Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml.\n",
+  "keywords": [
+    "docker", "odoo"
+  ],
+  "articleBody": "Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.\nDalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.\nAda dua cara untuk melakukan debugging saat develop menggunakan docker.\n1. Menggunakan Metode Attach Container Baik digunakan di local development environment. Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging. Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml.\nversion: \"3.8\" services: odoo-sanbe: restart: unless-stopped ports: - \"8069:8069\" stdin_open: true #1 tty: true #2 Jika sudah, restart docker service-nya. Selanjutnya, yang perlu dilakukan teman-teman adalah:\nTrigger method yang akan di debug. Misal, saya akan melakukan debug pada function action_reproses. Jalankan docker attach menggunakan command docker attach container_name. Misal, docker attach odoo-sanbe 2. Menggunakan Python Package Baik digunakan ketika production environment. Tambahkan enam line baru dibawah ini pada pengaturan docker-compose.yaml.\nversion: \"3.8\" services: odoo-sanbe: restart: unless-stopped ports: - \"8069:8069\" - \"4444:4444\" #1 stdin_open: true #2 tty: true #3 environment: #4 - HOST=0.0.0.0 #5 - PORT=4444 #6 Untuk keperluan remote debugging, kita akan menggunakan telnet. Pengguna Windows Aktifkan telnet dengan menjalankan pkgmgr /iu:\"TelnetClient\" pada terminal.\nJika sudah, restart docker service-nya. Kali ini, yang perlu teman-teman lakukan adalah:\nTrigger method yang ingin di debug. Jalankan remote debugging menggunakan telnet. Yaitu, telnet {ip_addres_container} {port}. Misal, telnet 0.0.0.0 4444. Kesimpulan Debugging python menggunakan pdb sangat di rekomendasikan karena mendukung interactive debugging menggunakan command line dan juga kemudahan dalam penggunaannya.\nSecara keseluruhan, dibawah ini adalah perbedaan penggunaan pdb dengan docker attach dan juga remote debugging menggunakan package remote-pdb.\nFeature remote-pdb pdb with docker attach Connection Remote via network (IP + port) Local via container STDIN/STDOUT Ease of Use Requires telnet or similar tool Requires docker attach Detached Containers Works seamlessly Must attach to interact with debugger Flexibility Debug locally within the container Debug locally within the container Port Requirement Needs an exposed port No port required Interference Does not block container input Blocks STDIN and may interfere Sekian saja untuk kali ini. Terimakasih!\n",
+  "wordCount" : "355",
+  "inLanguage": "en",
+  "datePublished": "2024-12-16T13:27:39+07:00",
+  "dateModified": "2024-12-16T13:27:39+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rohimoz28",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rohimoz28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">

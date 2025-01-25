@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Membuat Notifikasi Menggunakan Webhook Discord | Rohimoz28</title>
 <meta name="keywords" content="webhook">
 <meta name="description" content="Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord">
@@ -55,7 +55,67 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Membuat Notifikasi Menggunakan Webhook Discord" />
+<meta property="og:description" content="Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rohimoz28.github.io/blog/membuat-notifikasi-menggunakan-webhook-discord/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-12-14T12:26:32+07:00" />
+<meta property="article:modified_time" content="2024-12-14T12:26:32+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Membuat Notifikasi Menggunakan Webhook Discord"/>
+<meta name="twitter:description" content="Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://rohimoz28.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Membuat Notifikasi Menggunakan Webhook Discord",
+      "item": "https://rohimoz28.github.io/blog/membuat-notifikasi-menggunakan-webhook-discord/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Membuat Notifikasi Menggunakan Webhook Discord",
+  "name": "Membuat Notifikasi Menggunakan Webhook Discord",
+  "description": "Cara Membuat Notifikasi Event Realtime Menggunakan Webhook Discord",
+  "keywords": [
+    "webhook"
+  ],
+  "articleBody": "Webhook Webhook adalah sebuah metode untuk memungkinkan aplikasi atau layanan berkomunikasi satu sama lain secara otomatis melalui HTTP request. Secara sederhana, webhook adalah cara bagi satu aplikasi untuk memberi tahu aplikasi lain tentang suatu kejadian (event) atau peristiwa yang terjadi secara real-time.\nKeuntungan Menggunakan Webhook Real-Time: Webhook memungkinkan komunikasi yang cepat dan real-time antara aplikasi atau sistem. Efisien: Daripada aplikasi penerima harus secara terus-menerus memeriksa data (polling), webhook hanya mengirimkan data ketika terjadi perubahan, sehingga lebih efisien dalam hal penggunaan sumber daya. Automatisasi: Webhook dapat digunakan untuk mengotomatisasi alur kerja atau tindakan berdasarkan event yang terjadi, seperti mengirimkan pemberitahuan, memperbarui database, atau menjalankan skrip otomatis. Latar Belakang Masalah Ketika melakukan event mengeksekusi di server menggunakan script .sh perlu ada mekanisme mengirim notifikasi ketika ada error dalam proses tersebut. Ada banyak pilihan, tapi disini saya memilih untuk menggunakan Webhook Discord.\nAlasannya, pertama gratis. Kedua, karena discord adalah chat. Maka, kita bisa mengajak orang-orang yang berkepentingan terhadap notifikasi tersebut kedalam group chat.\nMendapatkan URL Webhook Discord Contoh Script Backup Database Dengan Webhook #!/bin/bash # Define variables BACKUP_DIR=\"/path/to/your/backup/dir\" DB_NAME=\"database_name\" DB_USER=\"your_username\" DB_PASSWORD=\"your_password\" DB_HOST=\"ip_address\" DISCORD_WEBHOOK_URL=\"your_discord_webhook_url\" # Define a function to send a message to Discord send_discord_notification() { local message=$1 # Construct payload local payload=$(cat \u003c",
+  "wordCount" : "579",
+  "inLanguage": "en",
+  "datePublished": "2024-12-14T12:26:32+07:00",
+  "dateModified": "2024-12-14T12:26:32+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rohimoz28.github.io/blog/membuat-notifikasi-menggunakan-webhook-discord/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rohimoz28",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rohimoz28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -280,10 +340,10 @@ Kedepannya, bisa juga menambahkan orang-orang yang memerlukan notifikasi tersebu
     <br>
     <span>Cara Debug Odoo Di Docker Menggunakan Pdb</span>
   </a>
-  <a class="next" href="https://rohimoz28.github.io/blog/odoo-scheduled-actions/">
+  <a class="next" href="https://rohimoz28.github.io/blog/cara-menyimpan-query-sql-pada-module-odoo/">
     <span class="title">Next »</span>
     <br>
-    <span>Odoo Scheduled Actions</span>
+    <span>Cara Menyimpan Query SQL Pada Modul Odoo</span>
   </a>
 </nav>
 

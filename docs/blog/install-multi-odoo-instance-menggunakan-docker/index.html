@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Docker Multi Instance Odoo | Rohimoz28</title>
 <meta name="keywords" content="docker, odoo">
 <meta name="description" content="tutorial dan cara install banyak odoo instance dengan docker">
@@ -55,7 +55,67 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Docker Multi Instance Odoo" />
+<meta property="og:description" content="tutorial dan cara install banyak odoo instance dengan docker" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-09-29T19:03:00+07:00" />
+<meta property="article:modified_time" content="2024-09-29T19:03:00+07:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Multi Instance Odoo"/>
+<meta name="twitter:description" content="tutorial dan cara install banyak odoo instance dengan docker"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://rohimoz28.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Docker Multi Instance Odoo",
+      "item": "https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Docker Multi Instance Odoo",
+  "name": "Docker Multi Instance Odoo",
+  "description": "tutorial dan cara install banyak odoo instance dengan docker",
+  "keywords": [
+    "docker", "odoo"
+  ],
+  "articleBody": "Melanjutkan tulisan saya sebelumnya yaitu : Install Odoo 17 Menggunakan Docker.\nKali ini kita akan mencoba install beberapa odoo instance dengan satu database yang sama. Saya berasumsi kalian sudah sudah berhasil meng-install odoo menggunakan docker berdasarkan artikel saya sebelumnya.\nMatikan Servis Docker Compose Stop Servis Docker Compose\ndocker compose -f docker-compose.yaml -f dev.yaml stop\nRemove Docker Compose\ndocker compose -f docker-compose.yaml -f dev.yaml down\nCek Service Docker Compose Terakhir\ndocker compose ps -l\nKonfigurasi docker-compose.yaml Untuk aplikasi odoo yang baru, kita perlu membuat servis docker dan volume baru.\nversion: \"3.8\" services: odoo-demo: image: custom-odoo:17.0 container_name: odoo-demo env_file: myenvfile.env depends_on: - postgres-demo volumes: - odoo1-data-demo:/var/lib/odoo - ./config/odoo/demo:/etc/odoo - ../../customize/odoo-demo/addons-customize:/mnt/addons-customize - ../../customize/odoo-demo/addons-thirdparty:/mnt/addons-thirdparty networks: - demo_odoo_network # odoo instance baru odoo-demo1: image: custom-odoo:17.0 container_name: odoo-demo1 env_file: myenvfile.env depends_on: - postgres-demo volumes: - odoo1-data-demo1:/var/lib/odoo - ./config/odoo/demo1:/etc/odoo - ../../customize/odoo-demo1/addons-customize:/mnt/addons-customize - ../../customize/odoo-demo1/addons-thirdparty:/mnt/addons-thirdparty networks: - demo_odoo_network # END odoo instance baru postgres-demo: image: postgres:15 container_name: postgres-demo env_file: myenvfile.env volumes: - ./pg-data:/var/lib/pgsql/data/pgdata - ./config/postgresql/postgresql.conf:/etc/postgresql/postgresql.conf:ro networks: - demo_odoo_network # nginx-default: # image: nginx:1.24.0 # container_name: nginx-default # volumes: # - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf # depends_on: # - odoo17-default # networks: # - default_odoo_network volumes: odoo1-data-demo: # tambahkan volume untuk odoo baru odoo1-data-demo1: networks: demo_odoo_network: name: demo_odoo_network driver: bridge Ubah Konfigurasi Extension Selanjutnya, kita akan mengkonfigurasi file docker-compose extension (dev.yam \u0026 prod.yaml). Sebagai contoh, saya hanya akan mengubah konfigurasi dev.yaml untuk menambahkan servis dan mengkonfigurasi port yang akan digunakan servis odoo-demo1.\nversion: \"3.8\" services: odoo-demo: restart: unless-stopped ports: - \"8069:8069\" # servis odoo baru odoo-demo1: restart: unless-stopped ports: - \"8070:8069\" # END servis odoo baru postgres-demo: restart: unless-stopped ports: - \"5433:5432\" # nginx-demo: # restart: no # ports: # - \"81:80\" Copy folder Konfigurasi Odoo Sekarang kita copy folder demo yang berada di docker-odoo\\conf\\odoo-demo\\config\\odoo\\demo, lalu paste dengan nama demo1. Untuk saat ini, samakan saja isi file tersebut dengan sebelumnya, atau bisa juga di ubah sesuai dengan kebutuhan.\nTambahkan Modul Kustomisasi Odoo Lalu kita tambahkan modul kustomisasi Odoo di folder customize. Untuk saat ini, saya akan copy folder odoo-demo lalu mengganti namanya menjadi odoo-demo1. Atau, bisa disesuaikan juga dengan kebutuhan kalian.\nJalan Kembali Servis Docker Buat Servis Docker Compose Baru\ndocker compose -f docker-compose.yaml -f dev.yaml up -d\nKesimpulan Menginstall banyak odoo instance menggunakan satu database cocok untuk skenario berikut:\nPunya banyak project odoo Punya banyak project odoo dengan versi berbeda-beda Ingin mencoba odoo versi lain Tidak ingin menginstall Odoo langsung di mesin lokal kalian Membuat struktur folder lebih efisien Terima Kasih!\n",
+  "wordCount" : "399",
+  "inLanguage": "en",
+  "datePublished": "2024-09-29T19:03:00+07:00",
+  "dateModified": "2024-09-29T19:03:00+07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rohimoz28",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rohimoz28.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
