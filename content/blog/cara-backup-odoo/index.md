@@ -1,7 +1,7 @@
 +++
 title = 'Cara Backup Odoo Dan Postgresql'
 date = '2025-01-25T19:55:30+07:00'
-draft = true
+draft = false
 description = 'Jika Backup Odoo Melalui Front End Sudah Tidak Bisa Di Lakukan. Mungkin Backup Manual Postgresql dan Odoo Filestore Bisa Menjadi Opsi.'
 categories= ['Web Dev']
 tags = ['odoo']
