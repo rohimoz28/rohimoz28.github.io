@@ -140,10 +140,10 @@
   <div class="entry-content">
     <p>Latar Belakang Masalah Adakalanya, karena beberapa masalah, jadi mengharuskan kita untuk memindahkan GitLab ke server lain. Jika ingin melihat garis besar cara backup dan restore GitLab, teman-teman bisa lihat dokumentasinya langsung di Overview Backup Restore Gitlab.
 Atau, jika ingin langsung praktik, bisa mengikuti Tutorial berikut pada artikel ini.
-Prerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah terinstall di kedua server menggunakan docker. Storage yang mencukupi, karena file backup GitLab cukup besar (2GB &#43;&#43;). Backup # Lokasi default file backup di /var/opt/gitlab/backupsdocker exec -t &lt;name of container&gt; gitlab-rake gitlab:backup:create# copy file hasil backup, dari container ke host machinedocker cp &lt;name of container&gt;:/var/opt/gitlab/backups/&lt;name of backup&gt; .# backup file gitlab-secrets.jsondocker cp &lt;name of container&gt;:/etc/gitlab/gitlab-secrets.json .# backup file gitlab.rbdocker cp &lt;name of container&gt;:/etc/gitlab/gitlab.rb . Kemudian, file hasil backup dijadikan satu kedalam sebuah folder, misalkan backup_dir. Lalu lakukan compress dengan command : tar -zcvf backup_dir.tar.gz backup_dir
+Prerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah terinstall di kedua server menggunakan docker. Storage yang mencukupi, karena file backup GitLab cukup besar (2GB &#43;&#43;). Backup # Lokasi default file backup di /var/opt/gitlab/backups docker exec -t &lt;name of container&gt; gitlab-rake gitlab:backup:create # copy file hasil backup, dari container ke host machine docker cp &lt;name of container&gt;:/var/opt/gitlab/backups/&lt;name of backup&gt; . # backup file gitlab-secrets.json docker cp &lt;name of container&gt;:/etc/gitlab/gitlab-secrets.json . # backup file gitlab.rb docker cp &lt;name of container&gt;:/etc/gitlab/gitlab.rb . Kemudian, file hasil backup dijadikan satu kedalam sebuah folder, misalkan backup_dir. Lalu lakukan compress dengan command : tar -zcvf backup_dir.tar.gz backup_dir
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-24 11:52:59 +0700 +07'>December 24, 2024</span>&nbsp;·&nbsp;2 min</footer>
+  <footer class="entry-footer"><span title='2024-12-24 11:52:59 +0700 WIB'>December 24, 2024</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda" href="https://rohimoz28.github.io/blog/backup-restore-gitlab/"></a>
 </article>
 
@@ -155,7 +155,7 @@ Prerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah t
   <div class="entry-content">
     <p>A brief step of installing odoo multi instance</p>
   </div>
-  <footer class="entry-footer"><span title='2024-09-29 19:03:00 +0700 +07'>September 29, 2024</span>&nbsp;·&nbsp;2 min</footer>
+  <footer class="entry-footer"><span title='2024-09-29 19:03:00 +0700 WIB'>September 29, 2024</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Docker Multi Instance Odoo" href="https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/"></a>
 </article>
 
@@ -170,13 +170,13 @@ Solusi Maka dari itu, kita perlu merelokasi direktori default docker ini ke part
 Persiapan stop semua docker yang sedang berjalan
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2024-08-29 18:41:16 +0700 +07'>August 29, 2024</span>&nbsp;·&nbsp;2 min</footer>
+  <footer class="entry-footer"><span title='2024-08-29 18:41:16 +0700 WIB'>August 29, 2024</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Relokasi Docker" href="https://rohimoz28.github.io/blog/relokasi-docker/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="https://rohimoz28.github.io/">Rohimoz28</a></span> · 
+        <span>&copy; 2025 <a href="https://rohimoz28.github.io/">Rohimoz28</a></span> · 
 
     <span>
         Powered by

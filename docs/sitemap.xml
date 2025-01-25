@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rohimoz28.github.io/blog/backup-restore-gitlab/</loc>
-    <lastmod>2024-12-24T11:52:59+07:00</lastmod>
-  </url><url>
     <loc>https://rohimoz28.github.io/blog/</loc>
-    <lastmod>2024-12-24T11:52:59+07:00</lastmod>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/blog/cara-backup-odoo/</loc>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/categories/</loc>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/tags/odoo/</loc>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/</loc>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/tags/</loc>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/categories/web-dev/</loc>
+    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/blog/backup-restore-gitlab/</loc>
     <lastmod>2024-12-24T11:52:59+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/categories/dev-ops/</loc>
@@ -20,22 +35,10 @@
     <loc>https://rohimoz28.github.io/tags/gitlab/</loc>
     <lastmod>2024-12-24T11:52:59+07:00</lastmod>
   </url><url>
-    <loc>https://rohimoz28.github.io/</loc>
-    <lastmod>2024-12-24T11:52:59+07:00</lastmod>
-  </url><url>
-    <loc>https://rohimoz28.github.io/tags/</loc>
-    <lastmod>2024-12-24T11:52:59+07:00</lastmod>
-  </url><url>
     <loc>https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</loc>
     <lastmod>2024-12-16T13:27:39+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/tags/docker/</loc>
-    <lastmod>2024-12-16T13:27:39+07:00</lastmod>
-  </url><url>
-    <loc>https://rohimoz28.github.io/tags/odoo/</loc>
-    <lastmod>2024-12-16T13:27:39+07:00</lastmod>
-  </url><url>
-    <loc>https://rohimoz28.github.io/categories/web-dev/</loc>
     <lastmod>2024-12-16T13:27:39+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/categories/devops/</loc>

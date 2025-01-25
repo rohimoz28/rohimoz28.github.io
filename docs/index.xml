@@ -4,10 +4,17 @@
     <title>Rohimoz28</title>
     <link>https://rohimoz28.github.io/</link>
     <description>Recent content on Rohimoz28</description>
-    <generator>Hugo -- 0.135.0</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Dec 2024 11:52:59 +0700</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jan 2025 19:55:30 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cara Backup Odoo Dan Postgresql</title>
+      <link>https://rohimoz28.github.io/blog/cara-backup-odoo/</link>
+      <pubDate>Sat, 25 Jan 2025 19:55:30 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/cara-backup-odoo/</guid>
+      <description>Jika Backup Odoo Melalui Front End Sudah Tidak Bisa Di Lakukan. Mungkin Backup Manual Postgresql dan Odoo Filestore Bisa Menjadi Opsi.</description>
+    </item>
     <item>
       <title>Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda</title>
       <link>https://rohimoz28.github.io/blog/backup-restore-gitlab/</link>
