@@ -1,36 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Odoo on Rohimoz28</title><link>https://rohimoz28.github.io:44045/tags/odoo/</link><description>Recent content in Odoo on Rohimoz28</description><generator>Hugo -- 0.139.4</generator><language>en-us</language><lastBuildDate>Sat, 25 Jan 2025 21:07:25 +0700</lastBuildDate><atom:link href="https://rohimoz28.github.io:44045/tags/odoo/index.xml" rel="self" type="application/rss+xml"/><item><title>Cara Backup Odoo Dan Postgresql</title><link>https://rohimoz28.github.io:44045/blog/cara-backup-odoo/</link><pubDate>Sat, 25 Jan 2025 19:55:30 +0700</pubDate><guid>https://rohimoz28.github.io:44045/blog/cara-backup-odoo/</guid><description>Jika Backup Odoo Melalui Front End Sudah Tidak Bisa Di Lakukan. Mungkin Backup Manual Postgresql dan Odoo Filestore Bisa Menjadi Opsi.</description></item><item><title>Cara Debug Odoo Di Docker Menggunakan Pdb</title><link>https://rohimoz28.github.io:44045/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</link><pubDate>Mon, 16 Dec 2024 13:27:39 +0700</pubDate><guid>https://rohimoz28.github.io:44045/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</guid><description>&lt;h2 id="latar-belakang-masalah">Latar Belakang Masalah&lt;/h2>
-&lt;p>Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
-menggunakan python package &lt;code>pdb&lt;/code>.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Odoo on Rohimoz28</title>
+    <link>https://rohimoz28.github.io/tags/odoo/</link>
+    <description>Recent content in Odoo on Rohimoz28</description>
+    <generator>Hugo -- 0.139.4</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jan 2025 19:55:30 +0700</lastBuildDate>
+    <atom:link href="https://rohimoz28.github.io/tags/odoo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cara Backup Odoo Dan Postgresql</title>
+      <link>https://rohimoz28.github.io/blog/cara-backup-odoo/</link>
+      <pubDate>Sat, 25 Jan 2025 19:55:30 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/cara-backup-odoo/</guid>
+      <description>Jika Backup Odoo Melalui Front End Sudah Tidak Bisa Di Lakukan. Mungkin Backup Manual Postgresql dan Odoo Filestore Bisa Menjadi Opsi.</description>
+    </item>
+    <item>
+      <title>Cara Debug Odoo Di Docker Menggunakan Pdb</title>
+      <link>https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</link>
+      <pubDate>Mon, 16 Dec 2024 13:27:39 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</guid>
+      <description>&lt;h2 id=&#34;latar-belakang-masalah&#34;&gt;Latar Belakang Masalah&lt;/h2&gt;
+&lt;p&gt;Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
+menggunakan python package &lt;code&gt;pdb&lt;/code&gt;.
 Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan
-package tersebut.&lt;/p>
-&lt;p>Dalam praktik kali ini saya mengasumsikan teman-teman sudah &lt;a href="https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/">menginstall odoo menggunakan docker&lt;/a>.
-Kali ini, kita akan menggunakan VSCode sebagai text editor.&lt;/p>
-&lt;p>Ada dua cara untuk melakukan debugging saat develop menggunakan docker.&lt;/p>
-&lt;h2 id="1-menggunakan-metode-attach-container">1. Menggunakan Metode Attach Container&lt;/h2>
-&lt;p>&lt;strong>Baik digunakan&lt;/strong> di local development environment. &lt;br>
+package tersebut.&lt;/p&gt;
+&lt;p&gt;Dalam praktik kali ini saya mengasumsikan teman-teman sudah &lt;a href=&#34;https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/&#34;&gt;menginstall odoo menggunakan docker&lt;/a&gt;.
+Kali ini, kita akan menggunakan VSCode sebagai text editor.&lt;/p&gt;
+&lt;p&gt;Ada dua cara untuk melakukan debugging saat develop menggunakan docker.&lt;/p&gt;
+&lt;h2 id=&#34;1-menggunakan-metode-attach-container&#34;&gt;1. Menggunakan Metode Attach Container&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Baik digunakan&lt;/strong&gt; di local development environment. &lt;br&gt;
 Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging.
-Tambahkan kedua line dibawah ini pada pengaturan &lt;code>docker-compose.yaml&lt;/code>.&lt;/p></description></item><item><title>Cara Menyimpan Query SQL Pada Modul Odoo</title><link>https://rohimoz28.github.io:44045/blog/cara-menyimpan-query-sql-pada-module-odoo/</link><pubDate>Tue, 26 Nov 2024 18:41:16 +0700</pubDate><guid>https://rohimoz28.github.io:44045/blog/cara-menyimpan-query-sql-pada-module-odoo/</guid><description>&lt;p>Masalahnya, praktik meletakkan query procedure PostgreSQL langsung di database lalu memanggilnya dengan function &lt;code>execute&lt;/code>
-di kode python merupakan hal yang buruk ketika procedure tersebut dikerjakan oleh beberapa orang.&lt;/p>
-&lt;p>Sayangnya, ketika banyak orang mengerjakan query procedure langsung di database, bisa mengakibatkan inkonsistensi kode.&lt;/p>
-&lt;p>Untuk itu, diperlukan suatu cara untuk mensinkronkan query sql yang di kerjakan di dalam team.&lt;/p>
-&lt;h2 id="buat-folder-db">Buat Folder db&lt;/h2>
-&lt;p>Pertama, kita buat folder baru didalam modul kustom kita dengan nama &lt;code>db&lt;/code>. Yang nantinya akan menjadi tempat kita
-meletakkan file berformat &lt;code>.sql&lt;/code>.&lt;/p></description></item><item><title>Docker Multi Instance Odoo</title><link>https://rohimoz28.github.io:44045/blog/install-multi-odoo-instance-menggunakan-docker/</link><pubDate>Sun, 29 Sep 2024 19:03:00 +0700</pubDate><guid>https://rohimoz28.github.io:44045/blog/install-multi-odoo-instance-menggunakan-docker/</guid><description>tutorial dan cara install banyak odoo instance dengan docker</description></item><item><title>Install Odoo 17 Menggunakan Docker</title><link>https://rohimoz28.github.io:44045/blog/install-odoo-menggunakan-docker/</link><pubDate>Sun, 29 Sep 2024 18:41:16 +0700</pubDate><guid>https://rohimoz28.github.io:44045/blog/install-odoo-menggunakan-docker/</guid><description>&lt;p>Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Tambahkan kedua line dibawah ini pada pengaturan &lt;code&gt;docker-compose.yaml&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cara Menyimpan Query SQL Pada Modul Odoo</title>
+      <link>https://rohimoz28.github.io/blog/cara-menyimpan-query-sql-pada-module-odoo/</link>
+      <pubDate>Tue, 26 Nov 2024 18:41:16 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/cara-menyimpan-query-sql-pada-module-odoo/</guid>
+      <description>&lt;p&gt;Masalahnya, praktik meletakkan query procedure PostgreSQL langsung di database lalu memanggilnya dengan function &lt;code&gt;execute&lt;/code&gt;
+di kode python merupakan hal yang buruk ketika procedure tersebut dikerjakan oleh beberapa orang.&lt;/p&gt;
+&lt;p&gt;Sayangnya, ketika banyak orang mengerjakan query procedure langsung di database, bisa mengakibatkan inkonsistensi kode.&lt;/p&gt;
+&lt;p&gt;Untuk itu, diperlukan suatu cara untuk mensinkronkan query sql yang di kerjakan di dalam team.&lt;/p&gt;
+&lt;h2 id=&#34;buat-folder-db&#34;&gt;Buat Folder db&lt;/h2&gt;
+&lt;p&gt;Pertama, kita buat folder baru didalam modul kustom kita dengan nama &lt;code&gt;db&lt;/code&gt;. Yang nantinya akan menjadi tempat kita
+meletakkan file berformat &lt;code&gt;.sql&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker Multi Instance Odoo</title>
+      <link>https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/</link>
+      <pubDate>Sun, 29 Sep 2024 19:03:00 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/install-multi-odoo-instance-menggunakan-docker/</guid>
+      <description>tutorial dan cara install banyak odoo instance dengan docker</description>
+    </item>
+    <item>
+      <title>Install Odoo 17 Menggunakan Docker</title>
+      <link>https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/</link>
+      <pubDate>Sun, 29 Sep 2024 18:41:16 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/</guid>
+      <description>&lt;p&gt;Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
 Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
-Jika belum, silahkan ikuti &lt;a href="%5Bhttps://%5D(https://docs.docker.com/engine/install/)">Tutorial Install Docker&lt;/a> dari laman resminya.&lt;/p>
-&lt;p>Untuk tuorial kali ini, akan menggunakan source code dari &lt;a href="https://github.com/rohimoz28/odoo-docker">repository&lt;/a>
-github saya. Silahkan di fork atau di clone di lokal kalian.&lt;/p>
-&lt;h2 id="struktur-folder">Struktur Folder&lt;/h2>
-&lt;p>Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. &lt;code>conf&lt;/code> &lt;code>customize&lt;/code>.
+Jika belum, silahkan ikuti &lt;a href=&#34;%5Bhttps://%5D(https://docs.docker.com/engine/install/)&#34;&gt;Tutorial Install Docker&lt;/a&gt; dari laman resminya.&lt;/p&gt;
+&lt;p&gt;Untuk tuorial kali ini, akan menggunakan source code dari &lt;a href=&#34;https://github.com/rohimoz28/odoo-docker&#34;&gt;repository&lt;/a&gt;
+github saya. Silahkan di fork atau di clone di lokal kalian.&lt;/p&gt;
+&lt;h2 id=&#34;struktur-folder&#34;&gt;Struktur Folder&lt;/h2&gt;
+&lt;p&gt;Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. &lt;code&gt;conf&lt;/code&gt; &lt;code&gt;customize&lt;/code&gt;.
 Struktur folder kalian akan tampak seperti ini:
-&lt;img loading="lazy" src="images/struktur-direktori.jpg" alt="struktur-direktori" />
-&lt;/p></description></item><item><title>Override ir.model.access.csv</title><link>https://rohimoz28.github.io:44045/blog/override-ir-model-access-csv/</link><pubDate>Mon, 29 Jul 2024 18:41:16 +0700</pubDate><guid>https://rohimoz28.github.io:44045/blog/override-ir-model-access-csv/</guid><description>&lt;h3 id="latar-belakang-masalah">Latar Belakang Masalah&lt;/h3>
-&lt;p>Biasanya, ketika kita meng-install module odoo dari third party, sudah otomatis ada pengaturan &lt;code>ir.model.access.csv&lt;/code> bawaan modul tersebut. Ada kalanya,
-kita ingin menyesuaikan hak akses tersebut dengan kebutuhan di modul kustomisasi kita.&lt;/p>
-&lt;h3 id="solusi">Solusi&lt;/h3>
-&lt;p>Maka dari itu, kita perlu melakukan override hak akses yg ada di &lt;code>ir.model.access.csv&lt;/code>.&lt;/p>
-&lt;h3 id="override-irmodelaccesscsv">Override ir.model.access.csv&lt;/h3>
-&lt;p>Dibawah ini adalah contoh hak akses di &lt;code>ir.model.access.csv&lt;/code> yang ingin kita override.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-csv" data-lang="csv">id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+&lt;img loading=&#34;lazy&#34; src=&#34;images/struktur-direktori.jpg&#34; alt=&#34;struktur-direktori&#34;  /&gt;
+&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Override ir.model.access.csv</title>
+      <link>https://rohimoz28.github.io/blog/override-ir-model-access-csv/</link>
+      <pubDate>Mon, 29 Jul 2024 18:41:16 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/override-ir-model-access-csv/</guid>
+      <description>&lt;h3 id=&#34;latar-belakang-masalah&#34;&gt;Latar Belakang Masalah&lt;/h3&gt;
+&lt;p&gt;Biasanya, ketika kita meng-install module odoo dari third party, sudah otomatis ada pengaturan &lt;code&gt;ir.model.access.csv&lt;/code&gt; bawaan modul tersebut. Ada kalanya,
+kita ingin menyesuaikan hak akses tersebut dengan kebutuhan di modul kustomisasi kita.&lt;/p&gt;
+&lt;h3 id=&#34;solusi&#34;&gt;Solusi&lt;/h3&gt;
+&lt;p&gt;Maka dari itu, kita perlu melakukan override hak akses yg ada di &lt;code&gt;ir.model.access.csv&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;override-irmodelaccesscsv&#34;&gt;Override ir.model.access.csv&lt;/h3&gt;
+&lt;p&gt;Dibawah ini adalah contoh hak akses di &lt;code&gt;ir.model.access.csv&lt;/code&gt; yang ingin kita override.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-csv&#34; data-lang=&#34;csv&#34;&gt;id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hr_holidays_status_manager,hr.holidays.status manager,model_hr_leave_type,hr_holidays.group_hr_holidays_manager,1,1,1,1
-&lt;/code>&lt;/pre>&lt;p>Untuk meng-override nya, silahkan buka file &lt;code>ir.model.access.csv&lt;/code> di modul kustomisasi kalian dan ubah menjadi kira-kira seperti ini,&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Untuk meng-override nya, silahkan buka file &lt;code&gt;ir.model.access.csv&lt;/code&gt; di modul kustomisasi kalian dan ubah menjadi kira-kira seperti ini,&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
