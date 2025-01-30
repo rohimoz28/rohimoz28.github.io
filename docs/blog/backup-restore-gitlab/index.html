@@ -97,8 +97,8 @@
   "keywords": [
     "git", "gitlab"
   ],
-  "articleBody": "Latar Belakang Masalah Adakalanya, karena beberapa masalah, jadi mengharuskan kita untuk memindahkan GitLab ke server lain. Jika ingin melihat garis besar cara backup dan restore GitLab, teman-teman bisa lihat dokumentasinya langsung di Overview Backup Restore Gitlab.\nAtau, jika ingin langsung praktik, bisa mengikuti Tutorial berikut pada artikel ini.\nPrerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah terinstall di kedua server menggunakan docker. Storage yang mencukupi, karena file backup GitLab cukup besar (2GB ++). Backup # Lokasi default file backup di /var/opt/gitlab/backups docker exec -t gitlab-rake gitlab:backup:create # copy file hasil backup, dari container ke host machine docker cp :/var/opt/gitlab/backups/ . # backup file gitlab-secrets.json docker cp :/etc/gitlab/gitlab-secrets.json . # backup file gitlab.rb docker cp :/etc/gitlab/gitlab.rb . Kemudian, file hasil backup dijadikan satu kedalam sebuah folder, misalkan backup_dir. Lalu lakukan compress dengan command : tar -zcvf backup_dir.tar.gz backup_dir\nMigrasi Pertama, kita harus login sebagai user di server yang nantinya akan menjadi tempat restore GitLab.\nscp yourUsername@yourIPAddress:/path/to/compressed/backup/file /path/to/backup/folder Restore # copy file backup ke lokasi default di dalam container docker cp :/var/opt/gitlab/backups # ubah user permission untuk file backup docker exec -it chown git:git /var/opt/gitlab/backups/ # jalankan command untuk restore file backup docker exec -it gitlab-rake gitlab:backup:restore # restore gitlab-secrets.json docker cp gitlab-secrets.json :/etc/gitlab/gitlab-secrets.json # restore gitlab.rb docker cp gitlab.rb :/etc/gitlab/gitlab.rb # restart gitlab command docker exec -it gitlab gitlab-ctl reconfigure Contoh Kasus Masalah File Permission sudo docker exec -it gitlab update-permissions sudo docker restart gitlab Masalah Servis Down docker exec -it gitlab-server gitlab-ctl stop docker exec -it gitlab-server gitlab-ctl start Backup Otomatis (Opsional) Backup otomatis disini akan menggunakan sebuah shell script yang nantinya akan dijalankan otomatis menggunakan cronjob. Berikut isi dari file script tersebut.\n#/bin/sh #script to automate the gitlab backup and save it in folder /Mohamed.Emam/gitlab-backup docker exec -it gitlab gitlab-rake gitlab:backup:create docker cp gitlab:/var/opt/gitlab/backups/ /path/to/gitlab-backup docker cp gitlab:/etc/gitlab/gitlab.rb /path/to/gitlab-backup docker cp gitlab:/etc/gitlab/gitlab-secrets.json /path/to/gitlab-backup Kesimpulan Pada artikel ini, dijelaskan tata cara untuk melakukan backup, transfer file backup ke server berbeda, restore file backup menggunakan docker, serta cara membuat script shell untuk keperluan backup otomatis.\nTerimakasih.\n",
-  "wordCount" : "366",
+  "articleBody": "Latar Belakang Masalah Adakalanya, karena beberapa masalah, jadi mengharuskan kita untuk memindahkan GitLab ke server lain. Jika ingin melihat garis besar cara backup dan restore GitLab, teman-teman bisa lihat dokumentasinya langsung di Overview Backup Restore Gitlab.\nAtau, jika ingin langsung praktik, bisa mengikuti Tutorial berikut pada artikel ini.\nPrerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah terinstall di kedua server menggunakan docker. Storage yang mencukupi, karena file backup GitLab cukup besar (2GB ++). Backup # Lokasi default file backup di /var/opt/gitlab/backups docker exec -t gitlab-rake gitlab:backup:create # copy file hasil backup, dari container ke host machine docker cp :/var/opt/gitlab/backups/ . # backup file gitlab-secrets.json docker cp :/etc/gitlab/gitlab-secrets.json . # backup file gitlab.rb docker cp :/etc/gitlab/gitlab.rb . Kemudian, file hasil backup dijadikan satu kedalam sebuah folder, misalkan backup_dir. Lalu lakukan compress dengan command : tar -zcvf backup_dir.tar.gz backup_dir\nMigrasi Pertama, kita harus login sebagai user di server yang nantinya akan menjadi tempat restore GitLab.\nscp yourUsername@yourIPAddress:/path/to/compressed/backup/file /path/to/backup/folder Restore # copy file backup ke lokasi default di dalam container docker cp :/var/opt/gitlab/backups # ubah user permission untuk file backup docker exec -it chown git:git /var/opt/gitlab/backups/ # jalankan command untuk restore file backup docker exec -it gitlab-rake gitlab:backup:restore # restore gitlab-secrets.json docker cp gitlab-secrets.json :/etc/gitlab/gitlab-secrets.json # restore gitlab.rb docker cp gitlab.rb :/etc/gitlab/gitlab.rb # restart gitlab command docker exec -it gitlab-ctl reconfigure Contoh Kasus Ketika Restore Gitlab Masalah File Permission Secara default, Gitlab dan folder-folder didalamnya punya konfigurasi default yang mungkin saja berubah ketika melakukan proses backup dan restore. Untuk itu, kita bisa mengembalikan settingan default dari konfigurasi folder-folder Gitlab tersebut dengan command berikut.\ndocker exec -it update-permissions docker restart Restore Berhasil Tapi Belum Ada Perubahan Pada Gitlab Setelah restore berhasil dan kita restart docker gitlab-nya, seharusnya sudah tampak project-project dari hasil backup kita. Namun, jika project-project tersebut belum muncul setelah proses restore berhasil. Bisa coba command di bawah ini untuk restart Gitlab.\ndocker exec -it gitlab-ctl stop docker exec -it gitlab-ctl start Backup Otomatis (Opsional) Backup otomatis disini akan menggunakan sebuah shell script yang nantinya akan dijalankan otomatis menggunakan cronjob. Berikut isi dari file script tersebut.\n#/bin/sh #script to automate the gitlab backup and save it in folder /home/gitlab-backup docker exec -it gitlab gitlab-rake gitlab:backup:create docker cp gitlab:/var/opt/gitlab/backups/ /path/to/gitlab-backup docker cp gitlab:/etc/gitlab/gitlab.rb /path/to/gitlab-backup docker cp gitlab:/etc/gitlab/gitlab-secrets.json /path/to/gitlab-backup Kesimpulan Pada artikel ini, dijelaskan tata cara untuk melakukan backup, transfer file backup ke server berbeda, restore file backup menggunakan docker, serta cara membuat script shell untuk keperluan backup otomatis.\nTerimakasih.\n",
+  "wordCount" : "452",
   "inLanguage": "en",
   "datePublished": "2024-12-24T11:52:59+07:00",
   "dateModified": "2024-12-24T11:52:59+07:00",
@@ -187,7 +187,7 @@
     <div class="post-description">
       Implementasi Backup dan Restore GitLab menggunakan Docker Pada Server Berbeda
     </div>
-    <div class="post-meta"><span title='2024-12-24 11:52:59 +0700 WIB'>December 24, 2024</span>&nbsp;·&nbsp;2 min
+    <div class="post-meta"><span title='2024-12-24 11:52:59 +0700 WIB'>December 24, 2024</span>&nbsp;·&nbsp;3 min
 
 </div>
   </header> <div class="toc">
@@ -208,12 +208,12 @@
                 <li>
                     <a href="#restore" aria-label="Restore">Restore</a></li>
                 <li>
-                    <a href="#contoh-kasus" aria-label="Contoh Kasus">Contoh Kasus</a><ul>
+                    <a href="#contoh-kasus-ketika-restore-gitlab" aria-label="Contoh Kasus Ketika Restore Gitlab">Contoh Kasus Ketika Restore Gitlab</a><ul>
                         
                 <li>
                     <a href="#masalah-file-permission" aria-label="Masalah File Permission">Masalah File Permission</a></li>
                 <li>
-                    <a href="#masalah-servis-down" aria-label="Masalah Servis Down">Masalah Servis Down</a></li></ul>
+                    <a href="#restore-berhasil-tapi-belum-ada-perubahan-pada-gitlab" aria-label="Restore Berhasil Tapi Belum Ada Perubahan Pada Gitlab">Restore Berhasil Tapi Belum Ada Perubahan Pada Gitlab</a></li></ul>
                 </li>
                 <li>
                     <a href="#backup-otomatis-opsional" aria-label="Backup Otomatis (Opsional)">Backup Otomatis (Opsional)</a></li>
@@ -257,31 +257,35 @@ Lalu lakukan compress dengan command : <code>tar -zcvf backup_dir.tar.gz backup_
 docker cp &lt;name of backup&gt; &lt;name of container&gt;:/var/opt/gitlab/backups
 
 # ubah user permission untuk file backup
-docker exec -it &lt;name of container&gt; chown git:git /var/opt/gitlab/backups/&lt;name of backup&gt;
+docker exec -it &lt;name of container&gt; chown git:git /var/opt/gitlab/backups/&lt;name of backup file&gt;
 
 # jalankan command untuk restore file backup
 docker exec -it &lt;name of container&gt; gitlab-rake gitlab:backup:restore
 
 # restore gitlab-secrets.json
-docker cp gitlab-secrets.json &lt;name of pod&gt;:/etc/gitlab/gitlab-secrets.json
+docker cp gitlab-secrets.json &lt;name of container&gt;:/etc/gitlab/gitlab-secrets.json
 
 # restore gitlab.rb
-docker cp gitlab.rb &lt;name of pod&gt;:/etc/gitlab/gitlab.rb
+docker cp gitlab.rb &lt;name of container&gt;:/etc/gitlab/gitlab.rb
 
 # restart gitlab command
-docker exec -it gitlab gitlab-ctl reconfigure
-</code></pre><h2 id="contoh-kasus">Contoh Kasus<a hidden class="anchor" aria-hidden="true" href="#contoh-kasus">#</a></h2>
+docker exec -it &lt;name of container&gt; gitlab-ctl reconfigure
+</code></pre><h2 id="contoh-kasus-ketika-restore-gitlab">Contoh Kasus Ketika Restore Gitlab<a hidden class="anchor" aria-hidden="true" href="#contoh-kasus-ketika-restore-gitlab">#</a></h2>
 <h3 id="masalah-file-permission">Masalah File Permission<a hidden class="anchor" aria-hidden="true" href="#masalah-file-permission">#</a></h3>
-<pre tabindex="0"><code>sudo docker exec -it gitlab update-permissions
-sudo docker restart gitlab
-</code></pre><h3 id="masalah-servis-down">Masalah Servis Down<a hidden class="anchor" aria-hidden="true" href="#masalah-servis-down">#</a></h3>
-<pre tabindex="0"><code>docker exec -it gitlab-server gitlab-ctl stop
-docker exec -it gitlab-server gitlab-ctl start
+<p>Secara default, Gitlab dan folder-folder didalamnya punya konfigurasi default yang mungkin saja berubah ketika melakukan proses backup dan
+restore. Untuk itu, kita bisa mengembalikan settingan default dari konfigurasi folder-folder Gitlab tersebut dengan command berikut.</p>
+<pre tabindex="0"><code>docker exec -it &lt;name of container&gt; update-permissions
+docker restart &lt;name of container&gt;
+</code></pre><h3 id="restore-berhasil-tapi-belum-ada-perubahan-pada-gitlab">Restore Berhasil Tapi Belum Ada Perubahan Pada Gitlab<a hidden class="anchor" aria-hidden="true" href="#restore-berhasil-tapi-belum-ada-perubahan-pada-gitlab">#</a></h3>
+<p>Setelah restore berhasil dan kita restart docker gitlab-nya, seharusnya sudah tampak project-project dari hasil backup kita. Namun, jika project-project
+tersebut belum muncul setelah proses restore berhasil. Bisa coba command di bawah ini untuk restart Gitlab.</p>
+<pre tabindex="0"><code>docker exec -it &lt;name of container&gt; gitlab-ctl stop
+docker exec -it &lt;name of container&gt; gitlab-ctl start
 </code></pre><h2 id="backup-otomatis-opsional">Backup Otomatis (Opsional)<a hidden class="anchor" aria-hidden="true" href="#backup-otomatis-opsional">#</a></h2>
 <p>Backup otomatis disini akan menggunakan sebuah shell script yang nantinya akan dijalankan otomatis menggunakan <code>cronjob</code>.
 Berikut isi dari file script tersebut.</p>
 <pre tabindex="0"><code>#/bin/sh
-#script to automate the gitlab backup and save it in folder /Mohamed.Emam/gitlab-backup
+#script to automate the gitlab backup and save it in folder /home/gitlab-backup
 docker exec -it gitlab gitlab-rake gitlab:backup:create
 docker cp gitlab:/var/opt/gitlab/backups/ /path/to/gitlab-backup
 docker cp gitlab:/etc/gitlab/gitlab.rb /path/to/gitlab-backup

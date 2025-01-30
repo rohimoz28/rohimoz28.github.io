@@ -143,7 +143,7 @@ Atau, jika ingin langsung praktik, bisa mengikuti Tutorial berikut pada artikel 
 Prerequisites GitLab harus memiliki versi yang sama. Asumsi bahwa GitLab sudah terinstall di kedua server menggunakan docker. Storage yang mencukupi, karena file backup GitLab cukup besar (2GB &#43;&#43;). Backup # Lokasi default file backup di /var/opt/gitlab/backups docker exec -t &lt;name of container&gt; gitlab-rake gitlab:backup:create # copy file hasil backup, dari container ke host machine docker cp &lt;name of container&gt;:/var/opt/gitlab/backups/&lt;name of backup&gt; . # backup file gitlab-secrets.json docker cp &lt;name of container&gt;:/etc/gitlab/gitlab-secrets.json . # backup file gitlab.rb docker cp &lt;name of container&gt;:/etc/gitlab/gitlab.rb . Kemudian, file hasil backup dijadikan satu kedalam sebuah folder, misalkan backup_dir. Lalu lakukan compress dengan command : tar -zcvf backup_dir.tar.gz backup_dir
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2024-12-24 11:52:59 +0700 WIB'>December 24, 2024</span>&nbsp;·&nbsp;2 min</footer>
+  <footer class="entry-footer"><span title='2024-12-24 11:52:59 +0700 WIB'>December 24, 2024</span>&nbsp;·&nbsp;3 min</footer>
   <a class="entry-link" aria-label="post link to Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda" href="https://rohimoz28.github.io/blog/backup-restore-gitlab/"></a>
 </article>
     </main>

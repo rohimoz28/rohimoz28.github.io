@@ -84,4 +84,3 @@ di backup dari front end.
 `docker cp odoo:/var/lib/odoo/filestore/db_backup.tar.gz path/to/local/dir/backup`
 - hapus file backup di dalam container \
 `docker exec odoo rm /var/lib/odoo/filestore/db_backup.tar.gz`
->>>>>>>> d4843fb (updating hugo web artikel8):content/blog/cara-manual-backup-odoo/index.md
