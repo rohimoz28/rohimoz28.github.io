@@ -6,8 +6,15 @@
     <description>Recent content in Gitlab on Rohimoz28</description>
     <generator>Hugo -- 0.139.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Dec 2024 11:52:59 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2025 11:49:28 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Gitlab Community Menggunakan Docker</title>
+      <link>https://rohimoz28.github.io/blog/install-gitlab-community/</link>
+      <pubDate>Thu, 30 Jan 2025 11:49:28 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/install-gitlab-community/</guid>
+      <description>Dengan beberapa alasan, adakalanya kita ingin memiliki Gitlab yang terinstall pada server yang kita kelola sendiri.</description>
+    </item>
     <item>
       <title>Backup dan Restore Gitlab Dengan Docker Pada Server Berbeda</title>
       <link>https://rohimoz28.github.io/blog/backup-restore-gitlab/</link>
