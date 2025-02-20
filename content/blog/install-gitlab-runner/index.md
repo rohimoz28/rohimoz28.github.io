@@ -1,7 +1,7 @@
 +++
 title = 'Install Gitlab Runner'
 date = '2025-02-10T08:38:29+07:00'
-draft = true
+draft = false
 description = 'Untuk menggunakan CI/CD pada gitlab, ada beberapa aplikasi untuk mendukung hal tersebut. Tapi, GitLab Runner adalah yang paling kompatibel dengan GitLab Community.'
 categories= ['Dev Ops']
 tags = ['gitlab','git']
@@ -77,7 +77,3 @@ networks:
 ```
 
 **Note:** pastikan versi GitLab Runner dan GitLab CE kompatibel.
-
-## Setup worker pada GitLab
-
-## Kesimpulan

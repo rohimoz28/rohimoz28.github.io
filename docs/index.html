@@ -174,6 +174,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Install Gitlab Runner
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Latar Belakang Masalah Dalam proses deployment fitur ke user. Biasanya, ketika developer sudah menyelesaikan suatu fitur, maka terlebih dahulu akan melakukan push source code fitur ke repository (misal: GitLab). Setelahnya, perubahan terbaru dari repository akan di pull di server untuk selanjutnya dilakukan pengetesan dan lainnya. Kira - kira alur kerjanya akan seperti ini:
+Developer push branch baru ke remote repository. Developer melakukan merge berisi source code fitur baru ke branch development/staging/production. Developer login ke server, masuk ke directory project. Lalu melakukan pull source code project terbaru. Terakhir, developer akan restart aplikasi. Menggunakan CI/CD bisa menghilangkan langkah nomer 3 dan 4. Sebagai gantinya, kita bisa melakukan trigger langkah nomer 3 &amp; 4 ketika ada perubahan pada branch repository (langkah nomer 2).
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-10 08:38:29 +0700 WIB'>February 10, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Install Gitlab Runner" href="https://rohimoz28.github.io/blog/install-gitlab-runner/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Install Gitlab Community Menggunakan Docker
     </h2>
   </header>
@@ -303,22 +317,12 @@ Persiapan stop semua docker yang sedang berjalan
   <footer class="entry-footer"><span title='2024-08-29 18:41:16 +0700 WIB'>August 29, 2024</span>&nbsp;·&nbsp;2 min</footer>
   <a class="entry-link" aria-label="post link to Relokasi Docker" href="https://rohimoz28.github.io/blog/relokasi-docker/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Override ir.model.access.csv
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Latar Belakang Masalah Biasanya, ketika kita meng-install module odoo dari third party, sudah otomatis ada pengaturan ir.model.access.csv bawaan modul tersebut. Ada kalanya, kita ingin menyesuaikan hak akses tersebut dengan kebutuhan di modul kustomisasi kita.
-Solusi Maka dari itu, kita perlu melakukan override hak akses yg ada di ir.model.access.csv.
-Override ir.model.access.csv Dibawah ini adalah contoh hak akses di ir.model.access.csv yang ingin kita override.
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlinkaccess_hr_holidays_status_manager,hr.holidays.status manager,model_hr_leave_type,hr_holidays.group_hr_holidays_manager,1,1,1,1 Untuk meng-override nya, silahkan buka file ir.model.access.csv di modul kustomisasi kalian dan ubah menjadi kira-kira seperti ini,
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-07-29 18:41:16 +0700 WIB'>July 29, 2024</span>&nbsp;·&nbsp;1 min</footer>
-  <a class="entry-link" aria-label="post link to Override ir.model.access.csv" href="https://rohimoz28.github.io/blog/override-ir-model-access-csv/"></a>
-</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://rohimoz28.github.io/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

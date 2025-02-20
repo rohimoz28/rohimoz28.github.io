@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Git on Rohimoz28</title>
+    <link>http://localhost:1313/categories/git/</link>
+    <description>Recent content in Git on Rohimoz28</description>
+    <generator>Hugo -- 0.139.4</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Feb 2025 15:32:40 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konfigurasi Dasar Cicd Gitlab</title>
+      <link>http://localhost:1313/blog/konfigurasi-dasar-cicd-gitlab/</link>
+      <pubDate>Thu, 20 Feb 2025 15:32:40 +0700</pubDate>
+      <guid>http://localhost:1313/blog/konfigurasi-dasar-cicd-gitlab/</guid>
+      <description>&lt;h2 id=&#34;setup-worker-pada-gitlab&#34;&gt;Setup worker pada GitLab&lt;/h2&gt;
+&lt;p&gt;Sekarang saatnya kita registrasi runner pada gitlab.&lt;/p&gt;
+&lt;h3 id=&#34;register-runner&#34;&gt;Register Runner&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Silahkan ke menu &lt;em&gt;Settings → CI/CD → Runners → New Project Runner&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Isikan nama tags&lt;/li&gt;
+&lt;li&gt;Ceklis &lt;em&gt;run untagged jobs&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Klik &lt;em&gt;Create Runner&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Lalu nanti akan muncul halaman seperti dibawah ini
+&lt;img loading=&#34;lazy&#34; src=&#34;images/create-new-runner2.png&#34; alt=&#34;token-register-gitlab-runner&#34;  /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;register-token-pada-container-gitlab-runner&#34;&gt;Register Token Pada Container GitLab Runner&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy token yang ada di kolom &lt;em&gt;Step 1&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Masuk ke dalam container gitlab runner&lt;/li&gt;
+&lt;li&gt;Paste token yang tadi di copy
+&lt;img loading=&#34;lazy&#34; src=&#34;images/register-runner-inside-container.png&#34; alt=&#34;register-token-inside-container&#34;  /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
