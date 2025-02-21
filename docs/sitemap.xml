@@ -5,14 +5,32 @@
     <loc>https://rohimoz28.github.io/blog/</loc>
     <lastmod>2025-02-20T15:32:40+07:00</lastmod>
   </url><url>
+    <loc>https://rohimoz28.github.io/categories/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/categories/ci/cd/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/categories/dev-ops/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/tags/docker/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/categories/gitlab/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/blog/konfigurasi-dasar-cicd-gitlab/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
+    <loc>https://rohimoz28.github.io/tags/odoo/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
+  </url><url>
     <loc>https://rohimoz28.github.io/</loc>
     <lastmod>2025-02-20T15:32:40+07:00</lastmod>
   </url><url>
-    <loc>https://rohimoz28.github.io/categories/</loc>
-    <lastmod>2025-02-10T08:38:29+07:00</lastmod>
-  </url><url>
-    <loc>https://rohimoz28.github.io/categories/dev-ops/</loc>
-    <lastmod>2025-02-10T08:38:29+07:00</lastmod>
+    <loc>https://rohimoz28.github.io/tags/</loc>
+    <lastmod>2025-02-20T15:32:40+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/tags/git/</loc>
     <lastmod>2025-02-10T08:38:29+07:00</lastmod>
@@ -23,16 +41,10 @@
     <loc>https://rohimoz28.github.io/blog/install-gitlab-runner/</loc>
     <lastmod>2025-02-10T08:38:29+07:00</lastmod>
   </url><url>
-    <loc>https://rohimoz28.github.io/tags/</loc>
-    <lastmod>2025-02-10T08:38:29+07:00</lastmod>
-  </url><url>
     <loc>https://rohimoz28.github.io/blog/install-gitlab-community/</loc>
     <lastmod>2025-01-30T11:49:28+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/blog/cara-manual-backup-odoo/</loc>
-    <lastmod>2025-01-25T19:55:30+07:00</lastmod>
-  </url><url>
-    <loc>https://rohimoz28.github.io/tags/odoo/</loc>
     <lastmod>2025-01-25T19:55:30+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/categories/web-dev/</loc>
@@ -42,9 +54,6 @@
     <lastmod>2024-12-24T11:52:59+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/</loc>
-    <lastmod>2024-12-16T13:27:39+07:00</lastmod>
-  </url><url>
-    <loc>https://rohimoz28.github.io/tags/docker/</loc>
     <lastmod>2024-12-16T13:27:39+07:00</lastmod>
   </url><url>
     <loc>https://rohimoz28.github.io/categories/devops/</loc>

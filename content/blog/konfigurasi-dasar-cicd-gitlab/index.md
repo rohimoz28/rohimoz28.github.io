@@ -1,7 +1,7 @@
 +++
 title = 'Konfigurasi Dasar CI/CD Gitlab'
 date = '2025-02-20T15:32:40+07:00'
-draft = true
+draft = false
 description = 'Berikut ini adalah konfigurasi dasar file gitlab-ci.yml yang digunakan untuk CI/CD pada Gitlab.'
 categories= ['Gitlab', 'Dev Ops', 'CI/CD']
 tags = ['docker', 'odoo']

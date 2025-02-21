@@ -134,6 +134,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Konfigurasi Dasar CI/CD Gitlab
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Persyaratan Saya menggunakan Gilab self-hosted dan gitlab-runner yang di install menggunakan docker.
+Jika belum dan ingin install GitLab self-hosted bisa lihat caranya disini.
+Jika ingin install GitLab Runner menggunakan docker bisa lihat caranya disini.
+Buat job sederhana Sekarang kita akan coba membuat job sederhana. Job yang dijalankan akan seperti ini:
+Job akan ke trigger jika ada perubahan di branch main. Job akan menjalankan stages build dan deploy. Job akan dijalankan di dalam docker. Membuat file .gitlab-ci.yml stages:- build- deploybuild:stage: buildimage: alpine:latestscript:- echo &#34;Starting build stages...&#34;- echo &#34;Running another command...&#34;deploy:stage: deployimage: alpine:latestscript:- echo &#34;Starting deploy stages...&#34;- echo &#34;Running another command...&#34;- echo &#34;job finished!&#34; Kemudian, save perubahan tersebut pada gitlab atau push perubahan tersebut ke gitlab pada branch main.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-20 15:32:40 +0700 +07'>February 20, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Konfigurasi Dasar CI/CD Gitlab" href="https://rohimoz28.github.io/blog/konfigurasi-dasar-cicd-gitlab/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Cara Debug Odoo Di Docker Menggunakan Pdb
     </h2>
   </header>
