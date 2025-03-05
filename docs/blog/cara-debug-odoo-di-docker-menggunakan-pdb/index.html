@@ -197,13 +197,13 @@ Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml."/>
                 </a>
             </li>
             <li>
-                <a href="https://rohimoz28.github.io/categories/" title="Categories">
-                    <span>Categories</span>
+                <a href="https://rohimoz28.github.io/archives/" title="Archives">
+                    <span>Archives</span>
                 </a>
             </li>
             <li>
-                <a href="https://rohimoz28.github.io/tags/" title="Tags">
-                    <span>Tags</span>
+                <a href="https://rohimoz28.github.io/about/" title="About">
+                    <span>About</span>
                 </a>
             </li>
         </ul>
@@ -217,11 +217,11 @@ Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml."/>
     <h1 class="post-title entry-hint-parent">
       Cara Debug Odoo Di Docker Menggunakan Pdb
     </h1>
-    <div class="post-meta"><span title='2024-12-16 13:27:39 +0700 +07'>December 16, 2024</span>&nbsp;·&nbsp;2 min
+    <div class="post-meta"><span title='2024-12-16 13:27:39 +0700 WIB'>December 16, 2024</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> <div class="toc">
-    <details >
+    <details  open>
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
         </summary>
@@ -306,41 +306,41 @@ menggunakan package <code>remote-pdb</code>.</p>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Feature</strong></th>
-          <th style="text-align: left"><code>remote-pdb</code></th>
-          <th style="text-align: left"><code>pdb</code> with <code>docker attach</code></th>
+          <th><strong>Feature</strong></th>
+          <th><code>remote-pdb</code></th>
+          <th><code>pdb</code> with <code>docker attach</code></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><strong>Connection</strong></td>
-          <td style="text-align: left">Remote via network (IP + port)</td>
-          <td style="text-align: left">Local via container STDIN/STDOUT</td>
+          <td><strong>Connection</strong></td>
+          <td>Remote via network (IP + port)</td>
+          <td>Local via container STDIN/STDOUT</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Ease of Use</strong></td>
-          <td style="text-align: left">Requires telnet or similar tool</td>
-          <td style="text-align: left">Requires docker attach</td>
+          <td><strong>Ease of Use</strong></td>
+          <td>Requires telnet or similar tool</td>
+          <td>Requires docker attach</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Detached Containers</strong></td>
-          <td style="text-align: left">Works seamlessly</td>
-          <td style="text-align: left">Must attach to interact with debugger</td>
+          <td><strong>Detached Containers</strong></td>
+          <td>Works seamlessly</td>
+          <td>Must attach to interact with debugger</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Flexibility</strong></td>
-          <td style="text-align: left">Debug locally within the container</td>
-          <td style="text-align: left">Debug locally within the container</td>
+          <td><strong>Flexibility</strong></td>
+          <td>Debug locally within the container</td>
+          <td>Debug locally within the container</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Port Requirement</strong></td>
-          <td style="text-align: left">Needs an exposed port</td>
-          <td style="text-align: left">No port required</td>
+          <td><strong>Port Requirement</strong></td>
+          <td>Needs an exposed port</td>
+          <td>No port required</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Interference</strong></td>
-          <td style="text-align: left">Does not block container input</td>
-          <td style="text-align: left">Blocks STDIN and may interfere</td>
+          <td><strong>Interference</strong></td>
+          <td>Does not block container input</td>
+          <td>Blocks STDIN and may interfere</td>
       </tr>
   </tbody>
 </table>
@@ -470,6 +470,53 @@ menggunakan package <code>remote-pdb</code>.</p>
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

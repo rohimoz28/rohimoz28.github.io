@@ -15,7 +15,9 @@ enableEmoji = true
     ShowPostNavLinks = true
     ShareButtons = ['linkedin', 'whatsapp', 'telegram']
     ShowToc= true
+    TocOpen= true
     social= true
+    ShowCodeCopyButtons= true
 
 [[params.socialIcons]]
     name = "linkedin"
@@ -35,13 +37,13 @@ enableEmoji = true
     pageRef = '/'
     weight = 10
   [[menus.main]]
-    name = 'Categories'
-    pageRef = '/categories/'
-    weight = 20
-  [[menus.main]]
-    name = 'Tags'
-    pageRef = '/tags/'
+    name = 'Archives'
+    pageRef = '/archives/'
     weight = 30
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about/'
+    weight = 40
 
 [markup]
   [markup.tableOfContents]
