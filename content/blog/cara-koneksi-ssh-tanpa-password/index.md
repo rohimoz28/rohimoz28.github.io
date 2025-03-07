@@ -1,7 +1,7 @@
 +++
 title = 'Cara Koneksi SSH Tanpa Password'
 date = '2025-03-07T21:13:39+07:00'
-draft = true
+draft = false
 description = 'Ada saatnya kita perlu login SSH ke server tanpa harus input password.'
 categories= ['Dev Ops']
 tags = ['linux']
