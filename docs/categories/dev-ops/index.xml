@@ -6,8 +6,15 @@
     <description>Recent content in Dev Ops on Rohimoz28</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2025 15:32:40 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 07 Mar 2025 21:13:39 +0700</lastBuildDate>
     <atom:link href="https://rohimoz28.github.io/categories/dev-ops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cara Koneksi SSH Tanpa Password</title>
+      <link>https://rohimoz28.github.io/blog/cara-koneksi-ssh-tanpa-password/</link>
+      <pubDate>Fri, 07 Mar 2025 21:13:39 +0700</pubDate>
+      <guid>https://rohimoz28.github.io/blog/cara-koneksi-ssh-tanpa-password/</guid>
+      <description>Ada saatnya kita perlu login SSH ke server tanpa harus input password.</description>
+    </item>
     <item>
       <title>Konfigurasi Dasar CI/CD Gitlab</title>
       <link>https://rohimoz28.github.io/blog/konfigurasi-dasar-cicd-gitlab/</link>
