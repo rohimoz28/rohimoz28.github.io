@@ -55,10 +55,7 @@
         }
 
     </style>
-</noscript>
-  
-
-<meta property="og:title" content="Cara Backup Odoo Dan Postgresql" />
+</noscript><meta property="og:title" content="Cara Backup Odoo Dan Postgresql" />
 <meta property="og:description" content="Jika Backup Odoo Melalui Front End Sudah Tidak Bisa Di Lakukan. Mungkin Backup Manual Postgresql dan Odoo Filestore Bisa Menjadi Opsi." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rohimoz28.github.io/blog/cara-manual-backup-odoo/" /><meta property="article:section" content="blog" />
@@ -100,8 +97,8 @@
   "keywords": [
     "odoo"
   ],
-  "articleBody": "Latar Belakang Masalah Biasanya, kita dapat melakuakn backup odoo berikut database nya melalui front end aplikasi. Tapi, ketika ukuran database sudah besar (file compress \u003e 2GB) akan timbul masalah gagal backup. Biasanya karena faktor koneksi internet yang tidak stabil.\nEnvironment Dalam contoh kasus kali ini, penulis menggunakan Odoo dan Postgresql yang dijalankan menggunakan docker. Pada umumnya, cara yang diguanakan jika tidak memnggunakan docker adalah sama. Hanya beda syntax.\nSolusi Untuk latar belakang masalah yang dikemukakan diatas, perlu mekanisme backup lain untuk mengakomodasi database Odoo yang tidak bisa di backup dari front end.\nmanual backup postgresql manual backup odoo filestore Cara Backup Postgresql Jalankan pg_dump di dalam container postgres dan letakkan file backup di folder /tmp docker exec CONTAINER pg_dump -U DB_USER -F c -f /tmp/BACKUP_NAME.dump DB_NAME docker exec postgres pg_dump -U odoo -F c -f /tmp/db_backup.dump DB_TEST compres file dump menggunakan gzip docker exec postgres gzip /tmp/db_backup.dump copy file dump yang telah di compres ke local docker cp postgres:/tmp/db_backup.dump.gz path/to/local/dir/backup hapus file backup di dalam container docker exec postgres rm /tmp/db_backup.dump.gz Cara Backup Odoo Filestore buat file zip untuk odoo filestore docker exec CONTAINER tar -zcvf /var/lib/odoo/filestore/DB_NAME.tar.gz /var/lib/odoo/filestore/DB_NAME docker exec odoo tar -zcvf /var/lib/odoo/filestore/db_backup.tar.gz /var/lib/odoo/filestore/db_backup pindahkan file zip tersebut ke folder backup lokal docker cp odoo:/var/lib/odoo/filestore/db_backup.tar.gz path/to/local/dir/backup hapus file backup di dalam container docker exec odoo rm /var/lib/odoo/filestore/db_backup.tar.gz ======== +++ title = ‘Cara Manual Backup Odoo’ date = ‘2025-01-25T21:54:12+07:00’ draft = false description = ’' categories= [‘Web Dev’] tags = [‘odoo’] +++ Latar Belakang Masalah Biasanya, kita dapat melakuakn backup odoo berikut database nya melalui front end aplikasi. Tapi, ketika ukuran database sudah besar (file compress \u003e 2GB) akan timbul masalah gagal backup. Biasanya karena faktor koneksi internet yang tidak stabil.\nEnvironment Dalam contoh kasus kali ini, penulis menggunakan Odoo dan Postgresql yang dijalankan menggunakan docker. Pada umumnya, cara yang diguanakan jika tidak memnggunakan docker adalah sama. Hanya beda syntax.\nSolusi Untuk latar belakang masalah yang dikemukakan diatas, perlu mekanisme backup lain untuk mengakomodasi database Odoo yang tidak bisa di backup dari front end.\nmanual backup postgresql manual backup odoo filestore Cara Backup Postgresql Jalankan pg_dump di dalam container postgres dan letakkan file backup di folder /tmp docker exec CONTAINER pg_dump -U DB_USER -F c -f /tmp/BACKUP_NAME.dump DB_NAME docker exec postgres pg_dump -U odoo -F c -f /tmp/db_backup.dump DB_TEST compres file dump menggunakan gzip docker exec postgres gzip /tmp/db_backup.dump copy file dump yang telah di compres ke local docker cp postgres:/tmp/db_backup.dump.gz path/to/local/dir/backup hapus file backup di dalam container docker exec postgres rm /tmp/db_backup.dump.gz Cara Backup Odoo Filestore buat file zip untuk odoo filestore docker exec CONTAINER tar -zcvf /var/lib/odoo/filestore/DB_NAME.tar.gz /var/lib/odoo/filestore/DB_NAME docker exec odoo tar -zcvf /var/lib/odoo/filestore/db_backup.tar.gz /var/lib/odoo/filestore/db_backup pindahkan file zip tersebut ke folder backup lokal docker cp odoo:/var/lib/odoo/filestore/db_backup.tar.gz path/to/local/dir/backup hapus file backup di dalam container docker exec odoo rm /var/lib/odoo/filestore/db_backup.tar.gz ",
-  "wordCount" : "460",
+  "articleBody": "Latar Belakang Masalah Biasanya, kita dapat melakuakn backup odoo berikut database nya melalui front end aplikasi. Tapi, ketika ukuran database sudah besar (file compress \u003e 2GB) akan timbul masalah gagal backup. Biasanya karena faktor koneksi internet yang tidak stabil.\nEnvironment Dalam contoh kasus kali ini, penulis menggunakan Odoo dan Postgresql yang dijalankan menggunakan docker. Pada umumnya, cara yang diguanakan jika tidak memnggunakan docker adalah sama. Hanya beda syntax.\nSolusi Untuk latar belakang masalah yang dikemukakan diatas, perlu mekanisme backup lain untuk mengakomodasi database Odoo yang tidak bisa di backup dari front end.\nmanual backup postgresql manual backup odoo filestore Cara Backup Postgresql Jalankan pg_dump di dalam container postgres dan letakkan file backup di folder /tmp docker exec CONTAINER pg_dump -U DB_USER -F c -f /tmp/BACKUP_NAME.dump DB_NAME docker exec postgres pg_dump -U odoo -F c -f /tmp/db_backup.dump DB_TEST compres file dump menggunakan gzip docker exec postgres gzip /tmp/db_backup.dump copy file dump yang telah di compres ke local docker cp postgres:/tmp/db_backup.dump.gz path/to/local/dir/backup hapus file backup di dalam container docker exec postgres rm /tmp/db_backup.dump.gz Cara Backup Odoo Filestore buat file zip untuk odoo filestore docker exec CONTAINER tar -zcvf /var/lib/odoo/filestore/DB_NAME.tar.gz /var/lib/odoo/filestore/DB_NAME docker exec odoo tar -zcvf /var/lib/odoo/filestore/db_backup.tar.gz /var/lib/odoo/filestore/db_backup pindahkan file zip tersebut ke folder backup lokal docker cp odoo:/var/lib/odoo/filestore/db_backup.tar.gz path/to/local/dir/backup hapus file backup di dalam container docker exec odoo rm /var/lib/odoo/filestore/db_backup.tar.gz ",
+  "wordCount" : "218",
   "inLanguage": "en",
   "datePublished": "2025-01-25T19:55:30+07:00",
   "dateModified": "2025-01-25T19:55:30+07:00",
@@ -190,7 +187,7 @@
     <div class="post-description">
       Jika Backup Odoo Melalui Front End Sudah Tidak Bisa Di Lakukan. Mungkin Backup Manual Postgresql dan Odoo Filestore Bisa Menjadi Opsi.
     </div>
-    <div class="post-meta"><span title='2025-01-25 19:55:30 +0700 WIB'>January 25, 2025</span>&nbsp;·&nbsp;3 min
+    <div class="post-meta"><span title='2025-01-25 19:55:30 +0700 +07'>January 25, 2025</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> <div class="toc">
@@ -209,17 +206,7 @@
                 <li>
                     <a href="#cara-backup-postgresql" aria-label="Cara Backup Postgresql">Cara Backup Postgresql</a></li>
                 <li>
-                    <a href="#cara-backup-odoo-filestore" aria-label="Cara Backup Odoo Filestore">Cara Backup Odoo Filestore</a></li>
-                <li>
-                    <a href="#latar-belakang-masalah-1" aria-label="Latar Belakang Masalah">Latar Belakang Masalah</a></li>
-                <li>
-                    <a href="#environment-1" aria-label="Environment">Environment</a></li>
-                <li>
-                    <a href="#solusi-1" aria-label="Solusi">Solusi</a></li>
-                <li>
-                    <a href="#cara-backup-postgresql-1" aria-label="Cara Backup Postgresql">Cara Backup Postgresql</a></li>
-                <li>
-                    <a href="#cara-backup-odoo-filestore-1" aria-label="Cara Backup Odoo Filestore">Cara Backup Odoo Filestore</a>
+                    <a href="#cara-backup-odoo-filestore" aria-label="Cara Backup Odoo Filestore">Cara Backup Odoo Filestore</a>
                 </li>
             </ul>
         </div>
@@ -253,51 +240,6 @@ di backup dari front end.</p>
 <code>docker exec postgres rm /tmp/db_backup.dump.gz</code></li>
 </ul>
 <h3 id="cara-backup-odoo-filestore">Cara Backup Odoo Filestore<a hidden class="anchor" aria-hidden="true" href="#cara-backup-odoo-filestore">#</a></h3>
-<ul>
-<li>buat file zip untuk odoo filestore <br>
-<code>docker exec CONTAINER tar -zcvf /var/lib/odoo/filestore/DB_NAME.tar.gz /var/lib/odoo/filestore/DB_NAME</code> <br>
-<code>docker exec odoo tar -zcvf /var/lib/odoo/filestore/db_backup.tar.gz /var/lib/odoo/filestore/db_backup</code></li>
-<li>pindahkan file zip tersebut ke folder backup lokal <br>
-<code>docker cp odoo:/var/lib/odoo/filestore/db_backup.tar.gz path/to/local/dir/backup</code></li>
-<li>hapus file backup di dalam container <br>
-<code>docker exec odoo rm /var/lib/odoo/filestore/db_backup.tar.gz</code>
-========
-+++
-title = &lsquo;Cara Manual Backup Odoo&rsquo;
-date = &lsquo;2025-01-25T21:54:12+07:00&rsquo;
-draft = false
-description = &rsquo;'
-categories= [&lsquo;Web Dev&rsquo;]
-tags = [&lsquo;odoo&rsquo;]
-+++</li>
-</ul>
-<h3 id="latar-belakang-masalah-1">Latar Belakang Masalah<a hidden class="anchor" aria-hidden="true" href="#latar-belakang-masalah-1">#</a></h3>
-<p>Biasanya, kita dapat melakuakn backup odoo berikut database nya melalui front end aplikasi. Tapi, ketika
-ukuran database sudah besar (file compress &gt; 2GB) akan timbul masalah gagal backup. Biasanya karena faktor koneksi
-internet yang tidak stabil.</p>
-<h3 id="environment-1">Environment<a hidden class="anchor" aria-hidden="true" href="#environment-1">#</a></h3>
-<p>Dalam contoh kasus kali ini, penulis menggunakan Odoo dan Postgresql yang dijalankan menggunakan docker. Pada umumnya, cara yang diguanakan jika
-tidak memnggunakan docker adalah sama. Hanya beda syntax.</p>
-<h3 id="solusi-1">Solusi<a hidden class="anchor" aria-hidden="true" href="#solusi-1">#</a></h3>
-<p>Untuk latar belakang masalah yang dikemukakan diatas, perlu mekanisme backup lain untuk mengakomodasi database Odoo yang tidak bisa
-di backup dari front end.</p>
-<ul>
-<li>manual backup postgresql</li>
-<li>manual backup odoo filestore</li>
-</ul>
-<h3 id="cara-backup-postgresql-1">Cara Backup Postgresql<a hidden class="anchor" aria-hidden="true" href="#cara-backup-postgresql-1">#</a></h3>
-<ul>
-<li>Jalankan pg_dump di dalam container postgres dan letakkan file backup di folder /tmp <br>
-<code>docker exec CONTAINER pg_dump -U DB_USER -F c -f /tmp/BACKUP_NAME.dump DB_NAME</code> <br>
-<code>docker exec postgres pg_dump -U odoo -F c -f /tmp/db_backup.dump DB_TEST</code></li>
-<li>compres file dump menggunakan gzip <br>
-<code>docker exec postgres gzip /tmp/db_backup.dump</code></li>
-<li>copy file dump yang telah di compres ke local <br>
-<code>docker cp postgres:/tmp/db_backup.dump.gz path/to/local/dir/backup</code></li>
-<li>hapus file backup di dalam container <br>
-<code>docker exec postgres rm /tmp/db_backup.dump.gz</code></li>
-</ul>
-<h3 id="cara-backup-odoo-filestore-1">Cara Backup Odoo Filestore<a hidden class="anchor" aria-hidden="true" href="#cara-backup-odoo-filestore-1">#</a></h3>
 <ul>
 <li>buat file zip untuk odoo filestore <br>
 <code>docker exec CONTAINER tar -zcvf /var/lib/odoo/filestore/DB_NAME.tar.gz /var/lib/odoo/filestore/DB_NAME</code> <br>

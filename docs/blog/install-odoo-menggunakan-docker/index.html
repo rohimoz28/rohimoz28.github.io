@@ -7,9 +7,16 @@
 <meta name="robots" content="index, follow">
 <title>Install Odoo 17 Menggunakan Docker | Rohimoz28</title>
 <meta name="keywords" content="odoo, docker">
-<meta name="description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
-Untuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.
-Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder.">
+<meta name="description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Struktur Folder
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
+
+">
 <meta name="author" content="">
 <link rel="canonical" href="https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -57,13 +64,17 @@ Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2
         }
 
     </style>
-</noscript>
-  
+</noscript><meta property="og:title" content="Install Odoo 17 Menggunakan Docker" />
+<meta property="og:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Struktur Folder
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
 
-<meta property="og:title" content="Install Odoo 17 Menggunakan Docker" />
-<meta property="og:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
-Untuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.
-Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder." />
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rohimoz28.github.io/blog/install-odoo-menggunakan-docker/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2024-09-29T18:41:16+07:00" />
@@ -71,9 +82,16 @@ Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Install Odoo 17 Menggunakan Docker"/>
-<meta name="twitter:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
-Untuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.
-Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder."/>
+<meta name="twitter:description" content="Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker.
+Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian.
+Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.
+Untuk tuorial kali ini, akan menggunakan source code dari repository
+github saya. Silahkan di fork atau di clone di lokal kalian.
+Struktur Folder
+Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize.
+Struktur folder kalian akan tampak seperti ini:
+
+"/>
 
 
 <script type="application/ld+json">
@@ -102,7 +120,7 @@ Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2
   "@type": "BlogPosting",
   "headline": "Install Odoo 17 Menggunakan Docker",
   "name": "Install Odoo 17 Menggunakan Docker",
-  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nUntuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.\nStruktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder.",
+  "description": "Tulisan ini akan menunjukkan cara meng-install Odoo dan Postgresql menggunakan Docker. Sebelum mengikuti tutorial ini, penulis asumsikan bahwa kamu sudah meng-install Docker di sistem operasi kalian. Jika belum, silahkan ikuti Tutorial Install Docker dari laman resminya.\nUntuk tuorial kali ini, akan menggunakan source code dari repository github saya. Silahkan di fork atau di clone di lokal kalian.\nStruktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2 folder. conf customize. Struktur folder kalian akan tampak seperti ini: ",
   "keywords": [
     "odoo", "docker"
   ],
@@ -193,7 +211,7 @@ Struktur Folder Masuk ke folder yang baru di clone, maka kalian akan menemukan 2
     <h1 class="post-title entry-hint-parent">
       Install Odoo 17 Menggunakan Docker
     </h1>
-    <div class="post-meta"><span title='2024-09-29 18:41:16 +0700 WIB'>September 29, 2024</span>&nbsp;·&nbsp;5 min
+    <div class="post-meta"><span title='2024-09-29 18:41:16 +0700 +07'>September 29, 2024</span>&nbsp;·&nbsp;5 min
 
 </div>
   </header> <div class="toc">

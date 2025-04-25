@@ -7,10 +7,18 @@
 <meta name="robots" content="index, follow">
 <title>Cara Debug Odoo Di Docker Menggunakan Pdb | Rohimoz28</title>
 <meta name="keywords" content="docker, odoo">
-<meta name="description" content="Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.
-Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.
+<meta name="description" content="Latar Belakang Masalah
+Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
+menggunakan python package pdb.
+Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan
+package tersebut.
+Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker.
+Kali ini, kita akan menggunakan VSCode sebagai text editor.
 Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
-1. Menggunakan Metode Attach Container Baik digunakan di local development environment.">
+1. Menggunakan Metode Attach Container
+Baik digunakan di local development environment. 
+Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging.
+Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml.">
 <meta name="author" content="">
 <link rel="canonical" href="https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
@@ -58,14 +66,19 @@ Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
         }
 
     </style>
-</noscript>
-  
-
-<meta property="og:title" content="Cara Debug Odoo Di Docker Menggunakan Pdb" />
-<meta property="og:description" content="Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.
-Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.
+</noscript><meta property="og:title" content="Cara Debug Odoo Di Docker Menggunakan Pdb" />
+<meta property="og:description" content="Latar Belakang Masalah
+Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
+menggunakan python package pdb.
+Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan
+package tersebut.
+Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker.
+Kali ini, kita akan menggunakan VSCode sebagai text editor.
 Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
-1. Menggunakan Metode Attach Container Baik digunakan di local development environment." />
+1. Menggunakan Metode Attach Container
+Baik digunakan di local development environment. 
+Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging.
+Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rohimoz28.github.io/blog/cara-debug-odoo-di-docker-menggunakan-pdb/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2024-12-16T13:27:39+07:00" />
@@ -73,10 +86,18 @@ Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cara Debug Odoo Di Docker Menggunakan Pdb"/>
-<meta name="twitter:description" content="Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.
-Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.
+<meta name="twitter:description" content="Latar Belakang Masalah
+Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah
+menggunakan python package pdb.
+Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan
+package tersebut.
+Dalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker.
+Kali ini, kita akan menggunakan VSCode sebagai text editor.
 Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
-1. Menggunakan Metode Attach Container Baik digunakan di local development environment."/>
+1. Menggunakan Metode Attach Container
+Baik digunakan di local development environment. 
+Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging.
+Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml."/>
 
 
 <script type="application/ld+json">
@@ -105,7 +126,7 @@ Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
   "@type": "BlogPosting",
   "headline": "Cara Debug Odoo Di Docker Menggunakan Pdb",
   "name": "Cara Debug Odoo Di Docker Menggunakan Pdb",
-  "description": "Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.\nDalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.\nAda dua cara untuk melakukan debugging saat develop menggunakan docker.\n1. Menggunakan Metode Attach Container Baik digunakan di local development environment.",
+  "description": "Latar Belakang Masalah Untuk melakukan debugging di odoo, ada beberapa cara. Yang paling direkomendasikan adalah menggunakan python package pdb. Sayangnya, ketika develop Odoo menggunakan docker. Perlu ada konfigurasi khusus agar kita bisa menggunakan package tersebut.\nDalam praktik kali ini saya mengasumsikan teman-teman sudah menginstall odoo menggunakan docker. Kali ini, kita akan menggunakan VSCode sebagai text editor.\nAda dua cara untuk melakukan debugging saat develop menggunakan docker.\n1. Menggunakan Metode Attach Container Baik digunakan di local development environment. Karena tidak akan mengganggu STDIN dari program dan bisa melalui remote debugging. Tambahkan kedua line dibawah ini pada pengaturan docker-compose.yaml.\n",
   "keywords": [
     "docker", "odoo"
   ],
@@ -196,7 +217,7 @@ Ada dua cara untuk melakukan debugging saat develop menggunakan docker.
     <h1 class="post-title entry-hint-parent">
       Cara Debug Odoo Di Docker Menggunakan Pdb
     </h1>
-    <div class="post-meta"><span title='2024-12-16 13:27:39 +0700 WIB'>December 16, 2024</span>&nbsp;·&nbsp;2 min
+    <div class="post-meta"><span title='2024-12-16 13:27:39 +0700 +07'>December 16, 2024</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> <div class="toc">
@@ -283,45 +304,45 @@ menggunakan command line dan juga kemudahan dalam penggunaannya.</p>
 <p>Secara keseluruhan, dibawah ini adalah perbedaan penggunaan <code>pdb</code> dengan <code>docker attach</code> dan juga remote debugging
 menggunakan package <code>remote-pdb</code>.</p>
 <table>
-<thead>
-<tr>
-<th><strong>Feature</strong></th>
-<th><code>remote-pdb</code></th>
-<th><code>pdb</code> with <code>docker attach</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Connection</strong></td>
-<td>Remote via network (IP + port)</td>
-<td>Local via container STDIN/STDOUT</td>
-</tr>
-<tr>
-<td><strong>Ease of Use</strong></td>
-<td>Requires telnet or similar tool</td>
-<td>Requires docker attach</td>
-</tr>
-<tr>
-<td><strong>Detached Containers</strong></td>
-<td>Works seamlessly</td>
-<td>Must attach to interact with debugger</td>
-</tr>
-<tr>
-<td><strong>Flexibility</strong></td>
-<td>Debug locally within the container</td>
-<td>Debug locally within the container</td>
-</tr>
-<tr>
-<td><strong>Port Requirement</strong></td>
-<td>Needs an exposed port</td>
-<td>No port required</td>
-</tr>
-<tr>
-<td><strong>Interference</strong></td>
-<td>Does not block container input</td>
-<td>Blocks STDIN and may interfere</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Feature</strong></th>
+          <th style="text-align: left"><code>remote-pdb</code></th>
+          <th style="text-align: left"><code>pdb</code> with <code>docker attach</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Connection</strong></td>
+          <td style="text-align: left">Remote via network (IP + port)</td>
+          <td style="text-align: left">Local via container STDIN/STDOUT</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Ease of Use</strong></td>
+          <td style="text-align: left">Requires telnet or similar tool</td>
+          <td style="text-align: left">Requires docker attach</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Detached Containers</strong></td>
+          <td style="text-align: left">Works seamlessly</td>
+          <td style="text-align: left">Must attach to interact with debugger</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Flexibility</strong></td>
+          <td style="text-align: left">Debug locally within the container</td>
+          <td style="text-align: left">Debug locally within the container</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Port Requirement</strong></td>
+          <td style="text-align: left">Needs an exposed port</td>
+          <td style="text-align: left">No port required</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Interference</strong></td>
+          <td style="text-align: left">Does not block container input</td>
+          <td style="text-align: left">Blocks STDIN and may interfere</td>
+      </tr>
+  </tbody>
 </table>
 <p>Sekian saja untuk kali ini. Terimakasih!</p>
 
